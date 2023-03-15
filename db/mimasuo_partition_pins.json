@@ -1,0 +1,233 @@
+{
+	"partitions" : [
+		{
+			"name" : "Top",
+			"pins" : [
+				{
+					"name" : "sel1",
+					"strict" : false
+				},
+				{
+					"name" : "sel2",
+					"strict" : false
+				},
+				{
+					"name" : "sel3",
+					"strict" : false
+				},
+				{
+					"name" : "sel4",
+					"strict" : false
+				},
+				{
+					"name" : "sel5",
+					"strict" : false
+				},
+				{
+					"name" : "ledn",
+					"strict" : false
+				},
+				{
+					"name" : "ledw",
+					"strict" : false
+				},
+				{
+					"name" : "led3",
+					"strict" : false
+				},
+				{
+					"name" : "led4",
+					"strict" : false
+				},
+				{
+					"name" : "oled_rst",
+					"strict" : false
+				},
+				{
+					"name" : "oled_dc",
+					"strict" : false
+				},
+				{
+					"name" : "oled_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "oled_mosi",
+					"strict" : false
+				},
+				{
+					"name" : "rtc_sclk",
+					"strict" : false
+				},
+				{
+					"name" : "rtc_ce",
+					"strict" : false
+				},
+				{
+					"name" : "buzzer",
+					"strict" : false
+				},
+				{
+					"name" : "in1_4[3]",
+					"strict" : false
+				},
+				{
+					"name" : "in1_4[2]",
+					"strict" : false
+				},
+				{
+					"name" : "in1_4[1]",
+					"strict" : false
+				},
+				{
+					"name" : "in1_4[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KR[3]",
+					"strict" : false
+				},
+				{
+					"name" : "KR[2]",
+					"strict" : false
+				},
+				{
+					"name" : "KR[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KR[0]",
+					"strict" : false
+				},
+				{
+					"name" : "led[7]",
+					"strict" : false
+				},
+				{
+					"name" : "led[6]",
+					"strict" : false
+				},
+				{
+					"name" : "led[5]",
+					"strict" : false
+				},
+				{
+					"name" : "led[4]",
+					"strict" : false
+				},
+				{
+					"name" : "led[3]",
+					"strict" : false
+				},
+				{
+					"name" : "led[2]",
+					"strict" : false
+				},
+				{
+					"name" : "led[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[6]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_data[0]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_sel[5]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_sel[4]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_sel[3]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_sel[2]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_sel[1]",
+					"strict" : false
+				},
+				{
+					"name" : "seg_sel[0]",
+					"strict" : false
+				},
+				{
+					"name" : "rtc_data",
+					"strict" : false
+				},
+				{
+					"name" : "RST",
+					"strict" : false
+				},
+				{
+					"name" : "hongn",
+					"strict" : false
+				},
+				{
+					"name" : "hongw",
+					"strict" : false
+				},
+				{
+					"name" : "CLK",
+					"strict" : false
+				},
+				{
+					"name" : "rst_r",
+					"strict" : false
+				},
+				{
+					"name" : "KC[3]",
+					"strict" : false
+				},
+				{
+					"name" : "KC[1]",
+					"strict" : false
+				},
+				{
+					"name" : "KC[0]",
+					"strict" : false
+				},
+				{
+					"name" : "KC[2]",
+					"strict" : false
+				},
+				{
+					"name" : "ram_rst",
+					"strict" : false
+				},
+				{
+					"name" : "key1",
+					"strict" : false
+				}
+			]
+		}
+	]
+}

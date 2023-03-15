@@ -1,0 +1,1394 @@
+Analysis & Synthesis report for mimasuo
+Tue Mar 07 12:11:32 2023
+Quartus Prime Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+
+
+---------------------
+; Table of Contents ;
+---------------------
+  1. Legal Notice
+  2. Analysis & Synthesis Summary
+  3. Analysis & Synthesis Settings
+  4. Parallel Compilation
+  5. Analysis & Synthesis Source Files Read
+  6. Analysis & Synthesis Resource Usage Summary
+  7. Analysis & Synthesis Resource Utilization by Entity
+  8. Analysis & Synthesis RAM Summary
+  9. State Machine - |block|bjdjqd:inst9|state
+ 10. State Machine - |block|top:inst8|state
+ 11. State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|state
+ 12. State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|state
+ 13. State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|state
+ 14. State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|state
+ 15. State Machine - |block|oled_drive:inst6|ram_write:ram_write_inst|state
+ 16. State Machine - |block|oled_drive:inst6|ram_read:ram_read_inst|state
+ 17. State Machine - |block|oled_drive:inst6|oled_init:oled_init_inst|state
+ 18. State Machine - |block|oled_drive:inst6|spi_writebyte:spi_writebyte_inst|state
+ 19. State Machine - |block|caculator:inst7|state
+ 20. Registers Removed During Synthesis
+ 21. Removed Registers Triggering Further Register Optimizations
+ 22. General Register Statistics
+ 23. Inverted Register Statistics
+ 24. Multiplexer Restructuring Statistics (Restructuring Performed)
+ 25. Source assignments for oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component|altsyncram_0ar1:auto_generated
+ 26. Parameter Settings for User Entity Instance: oled_drive:inst6|spi_writebyte:spi_writebyte_inst
+ 27. Parameter Settings for User Entity Instance: oled_drive:inst6|oled_init:oled_init_inst
+ 28. Parameter Settings for User Entity Instance: oled_drive:inst6|ram_read:ram_read_inst
+ 29. Parameter Settings for User Entity Instance: oled_drive:inst6|ram_write:ram_write_inst
+ 30. Parameter Settings for User Entity Instance: oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component
+ 31. Parameter Settings for User Entity Instance: top:inst8
+ 32. Parameter Settings for User Entity Instance: top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0
+ 33. Parameter Settings for User Entity Instance: top:inst8|ax_debounce:ax_debounce_m0
+ 34. Parameter Settings for User Entity Instance: top:inst8|ax_pwm:ax_pwm_m0
+ 35. Parameter Settings for Inferred Entity Instance: oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0
+ 36. Parameter Settings for Inferred Entity Instance: oled_drive:inst6|ram_read:ram_read_inst|lpm_divide:Mod0
+ 37. altsyncram Parameter Settings by Entity Instance
+ 38. Port Connectivity Checks: "top:inst8|ax_debounce:ax_debounce_m0"
+ 39. Port Connectivity Checks: "top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0"
+ 40. Port Connectivity Checks: "top:inst8|ds1302_test:ds1302_test_m0"
+ 41. Port Connectivity Checks: "top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0"
+ 42. Port Connectivity Checks: "oled_drive:inst6|ram_write:ram_write_inst"
+ 43. Post-Synthesis Netlist Statistics for Top Partition
+ 44. Elapsed Time Per Partition
+ 45. Analysis & Synthesis Messages
+ 46. Analysis & Synthesis Suppressed Messages
+
+
+
+----------------
+; Legal Notice ;
+----------------
+Copyright (C) 2017  Intel Corporation. All rights reserved.
+Your use of Intel Corporation's design tools, logic functions 
+and other software and tools, and its AMPP partner logic 
+functions, and any output files from any of the foregoing 
+(including device programming or simulation files), and any 
+associated documentation or information are expressly subject 
+to the terms and conditions of the Intel Program License 
+Subscription Agreement, the Intel Quartus Prime License Agreement,
+the Intel FPGA IP License Agreement, or other applicable license
+agreement, including, without limitation, that your use is for
+the sole purpose of programming logic devices manufactured by
+Intel and sold by Intel or its authorized distributors.  Please
+refer to the applicable agreement for further details.
+
+
+
++----------------------------------------------------------------------------------+
+; Analysis & Synthesis Summary                                                     ;
++------------------------------------+---------------------------------------------+
+; Analysis & Synthesis Status        ; Successful - Tue Mar 07 12:11:32 2023       ;
+; Quartus Prime Version              ; 17.1.0 Build 590 10/25/2017 SJ Lite Edition ;
+; Revision Name                      ; mimasuo                                     ;
+; Top-level Entity Name              ; block                                       ;
+; Family                             ; Cyclone IV E                                ;
+; Total logic elements               ; 3,643                                       ;
+;     Total combinational functions  ; 3,566                                       ;
+;     Dedicated logic registers      ; 749                                         ;
+; Total registers                    ; 749                                         ;
+; Total pins                         ; 58                                          ;
+; Total virtual pins                 ; 0                                           ;
+; Total memory bits                  ; 8,192                                       ;
+; Embedded Multiplier 9-bit elements ; 0                                           ;
+; Total PLLs                         ; 0                                           ;
++------------------------------------+---------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Settings                                                                                        ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Option                                                                     ; Setting            ; Default Value      ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+; Device                                                                     ; EP4CE10F17C8L      ;                    ;
+; Top-level entity name                                                      ; block              ; mimasuo            ;
+; Family name                                                                ; Cyclone IV E       ; Cyclone IV GX      ;
+; Use smart compilation                                                      ; Off                ; Off                ;
+; Enable parallel Assembler and TimeQuest Timing Analyzer during compilation ; On                 ; On                 ;
+; Enable compact report table                                                ; Off                ; Off                ;
+; Restructure Multiplexers                                                   ; Auto               ; Auto               ;
+; Create Debugging Nodes for IP Cores                                        ; Off                ; Off                ;
+; Preserve fewer node names                                                  ; On                 ; On                 ;
+; Intel FPGA IP Evaluation Mode                                              ; Enable             ; Enable             ;
+; Verilog Version                                                            ; Verilog_2001       ; Verilog_2001       ;
+; VHDL Version                                                               ; VHDL_1993          ; VHDL_1993          ;
+; State Machine Processing                                                   ; Auto               ; Auto               ;
+; Safe State Machine                                                         ; Off                ; Off                ;
+; Extract Verilog State Machines                                             ; On                 ; On                 ;
+; Extract VHDL State Machines                                                ; On                 ; On                 ;
+; Ignore Verilog initial constructs                                          ; Off                ; Off                ;
+; Iteration limit for constant Verilog loops                                 ; 5000               ; 5000               ;
+; Iteration limit for non-constant Verilog loops                             ; 250                ; 250                ;
+; Add Pass-Through Logic to Inferred RAMs                                    ; On                 ; On                 ;
+; Infer RAMs from Raw Logic                                                  ; On                 ; On                 ;
+; Parallel Synthesis                                                         ; On                 ; On                 ;
+; DSP Block Balancing                                                        ; Auto               ; Auto               ;
+; NOT Gate Push-Back                                                         ; On                 ; On                 ;
+; Power-Up Don't Care                                                        ; On                 ; On                 ;
+; Remove Redundant Logic Cells                                               ; Off                ; Off                ;
+; Remove Duplicate Registers                                                 ; On                 ; On                 ;
+; Ignore CARRY Buffers                                                       ; Off                ; Off                ;
+; Ignore CASCADE Buffers                                                     ; Off                ; Off                ;
+; Ignore GLOBAL Buffers                                                      ; Off                ; Off                ;
+; Ignore ROW GLOBAL Buffers                                                  ; Off                ; Off                ;
+; Ignore LCELL Buffers                                                       ; Off                ; Off                ;
+; Ignore SOFT Buffers                                                        ; On                 ; On                 ;
+; Limit AHDL Integers to 32 Bits                                             ; Off                ; Off                ;
+; Optimization Technique                                                     ; Balanced           ; Balanced           ;
+; Carry Chain Length                                                         ; 70                 ; 70                 ;
+; Auto Carry Chains                                                          ; On                 ; On                 ;
+; Auto Open-Drain Pins                                                       ; On                 ; On                 ;
+; Perform WYSIWYG Primitive Resynthesis                                      ; Off                ; Off                ;
+; Auto ROM Replacement                                                       ; On                 ; On                 ;
+; Auto RAM Replacement                                                       ; On                 ; On                 ;
+; Auto DSP Block Replacement                                                 ; On                 ; On                 ;
+; Auto Shift Register Replacement                                            ; Auto               ; Auto               ;
+; Allow Shift Register Merging across Hierarchies                            ; Auto               ; Auto               ;
+; Auto Clock Enable Replacement                                              ; On                 ; On                 ;
+; Strict RAM Replacement                                                     ; Off                ; Off                ;
+; Allow Synchronous Control Signals                                          ; On                 ; On                 ;
+; Force Use of Synchronous Clear Signals                                     ; Off                ; Off                ;
+; Auto RAM Block Balancing                                                   ; On                 ; On                 ;
+; Auto RAM to Logic Cell Conversion                                          ; Off                ; Off                ;
+; Auto Resource Sharing                                                      ; Off                ; Off                ;
+; Allow Any RAM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any ROM Size For Recognition                                         ; Off                ; Off                ;
+; Allow Any Shift Register Size For Recognition                              ; Off                ; Off                ;
+; Use LogicLock Constraints during Resource Balancing                        ; On                 ; On                 ;
+; Ignore translate_off and synthesis_off directives                          ; Off                ; Off                ;
+; Timing-Driven Synthesis                                                    ; On                 ; On                 ;
+; Report Parameter Settings                                                  ; On                 ; On                 ;
+; Report Source Assignments                                                  ; On                 ; On                 ;
+; Report Connectivity Checks                                                 ; On                 ; On                 ;
+; Ignore Maximum Fan-Out Assignments                                         ; Off                ; Off                ;
+; Synchronization Register Chain Length                                      ; 2                  ; 2                  ;
+; Power Optimization During Synthesis                                        ; Normal compilation ; Normal compilation ;
+; HDL message level                                                          ; Level2             ; Level2             ;
+; Suppress Register Optimization Related Messages                            ; Off                ; Off                ;
+; Number of Removed Registers Reported in Synthesis Report                   ; 5000               ; 5000               ;
+; Number of Swept Nodes Reported in Synthesis Report                         ; 5000               ; 5000               ;
+; Number of Inverted Registers Reported in Synthesis Report                  ; 100                ; 100                ;
+; Clock MUX Protection                                                       ; On                 ; On                 ;
+; Auto Gated Clock Conversion                                                ; Off                ; Off                ;
+; Block Design Naming                                                        ; Auto               ; Auto               ;
+; SDC constraint protection                                                  ; Off                ; Off                ;
+; Synthesis Effort                                                           ; Auto               ; Auto               ;
+; Shift Register Replacement - Allow Asynchronous Clear Signal               ; On                 ; On                 ;
+; Pre-Mapping Resynthesis Optimization                                       ; Off                ; Off                ;
+; Analysis & Synthesis Message Level                                         ; Medium             ; Medium             ;
+; Disable Register Merging Across Hierarchies                                ; Auto               ; Auto               ;
+; Resource Aware Inference For Block RAM                                     ; On                 ; On                 ;
++----------------------------------------------------------------------------+--------------------+--------------------+
+
+
++------------------------------------------+
+; Parallel Compilation                     ;
++----------------------------+-------------+
+; Processors                 ; Number      ;
++----------------------------+-------------+
+; Number detected on machine ; 8           ;
+; Maximum allowed            ; 4           ;
+;                            ;             ;
+; Average used               ; 1.00        ;
+; Maximum used               ; 4           ;
+;                            ;             ;
+; Usage by Processor         ; % Time Used ;
+;     Processor 1            ; 100.0%      ;
+;     Processor 2            ;   0.0%      ;
+;     Processor 3            ;   0.0%      ;
+;     Processor 4            ;   0.0%      ;
++----------------------------+-------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Source Files Read                                                                                                                                            ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------+---------+
+; File Name with User-Entered Path ; Used in Netlist ; File Type                          ; File Name with Absolute Path                                                  ; Library ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------+---------+
+; top.v                            ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v                         ;         ;
+; spi_master.v                     ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/spi_master.v                  ;         ;
+; seg_scan.v                       ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_scan.v                    ;         ;
+; seg_decoder.v                    ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_decoder.v                 ;         ;
+; seg_bcd.v                        ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_bcd.v                     ;         ;
+; ds1302_test.v                    ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302_test.v                 ;         ;
+; ds1302_io.v                      ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302_io.v                   ;         ;
+; ds1302.v                         ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v                      ;         ;
+; ax_pwm.v                         ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ax_pwm.v                      ;         ;
+; ax_debounce.v                    ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ax_debounce.v                 ;         ;
+; clk_fenpin.v                     ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/clk_fenpin.v                  ;         ;
+; oled_drive.v                     ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v                  ;         ;
+; ram_write.v                      ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v                   ;         ;
+; spi_writebyte.v                  ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/spi_writebyte.v               ;         ;
+; oled_init.v                      ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v                   ;         ;
+; ram_read.v                       ; yes             ; User Verilog HDL File              ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v                    ;         ;
+; caculator.vhd                    ; yes             ; User VHDL File                     ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/caculator.vhd                 ;         ;
+; FREQUENCIES.vhd                  ; yes             ; User VHDL File                     ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/FREQUENCIES.vhd               ;         ;
+; sm_display.vhd                   ; yes             ; User VHDL File                     ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd                ;         ;
+; block.bdf                        ; yes             ; User Block Diagram/Schematic File  ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/block.bdf                     ;         ;
+; judge.vhd                        ; yes             ; User VHDL File                     ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/judge.vhd                     ;         ;
+; leds7.vhd                        ; yes             ; User VHDL File                     ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/leds7.vhd                     ;         ;
+; bjdjqd.vhd                       ; yes             ; User VHDL File                     ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/bjdjqd.vhd                    ;         ;
+; ram_show.v                       ; yes             ; Auto-Found Wizard-Generated File   ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_show.v                    ;         ;
+; altsyncram.tdf                   ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/altsyncram.tdf        ;         ;
+; stratix_ram_block.inc            ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/stratix_ram_block.inc ;         ;
+; lpm_mux.inc                      ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/lpm_mux.inc           ;         ;
+; lpm_decode.inc                   ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/lpm_decode.inc        ;         ;
+; aglobal171.inc                   ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/aglobal171.inc        ;         ;
+; a_rdenreg.inc                    ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/a_rdenreg.inc         ;         ;
+; altrom.inc                       ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/altrom.inc            ;         ;
+; altram.inc                       ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/altram.inc            ;         ;
+; altdpram.inc                     ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/altdpram.inc          ;         ;
+; db/altsyncram_0ar1.tdf           ; yes             ; Auto-Generated Megafunction        ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/altsyncram_0ar1.tdf        ;         ;
+; lpm_divide.tdf                   ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/lpm_divide.tdf        ;         ;
+; abs_divider.inc                  ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/abs_divider.inc       ;         ;
+; sign_div_unsign.inc              ; yes             ; Megafunction                       ; d:/download/quartus17.1/quartus/libraries/megafunctions/sign_div_unsign.inc   ;         ;
+; db/lpm_divide_h9m.tdf            ; yes             ; Auto-Generated Megafunction        ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/lpm_divide_h9m.tdf         ;         ;
+; db/sign_div_unsign_6kh.tdf       ; yes             ; Auto-Generated Megafunction        ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/sign_div_unsign_6kh.tdf    ;         ;
+; db/alt_u_div_04f.tdf             ; yes             ; Auto-Generated Megafunction        ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/alt_u_div_04f.tdf          ;         ;
+; db/add_sub_7pc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/add_sub_7pc.tdf            ;         ;
+; db/add_sub_8pc.tdf               ; yes             ; Auto-Generated Megafunction        ; D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/add_sub_8pc.tdf            ;         ;
++----------------------------------+-----------------+------------------------------------+-------------------------------------------------------------------------------+---------+
+
+
++---------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Usage Summary                                                       ;
++---------------------------------------------+-----------------------------------------------------+
+; Resource                                    ; Usage                                               ;
++---------------------------------------------+-----------------------------------------------------+
+; Estimated Total logic elements              ; 3,643                                               ;
+;                                             ;                                                     ;
+; Total combinational functions               ; 3566                                                ;
+; Logic element usage by number of LUT inputs ;                                                     ;
+;     -- 4 input functions                    ; 2374                                                ;
+;     -- 3 input functions                    ; 478                                                 ;
+;     -- <=2 input functions                  ; 714                                                 ;
+;                                             ;                                                     ;
+; Logic elements by mode                      ;                                                     ;
+;     -- normal mode                          ; 3119                                                ;
+;     -- arithmetic mode                      ; 447                                                 ;
+;                                             ;                                                     ;
+; Total registers                             ; 749                                                 ;
+;     -- Dedicated logic registers            ; 749                                                 ;
+;     -- I/O registers                        ; 0                                                   ;
+;                                             ;                                                     ;
+; I/O pins                                    ; 58                                                  ;
+; Total memory bits                           ; 8192                                                ;
+;                                             ;                                                     ;
+; Embedded Multiplier 9-bit elements          ; 0                                                   ;
+;                                             ;                                                     ;
+; Maximum fan-out node                        ; oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[2] ;
+; Maximum fan-out                             ; 703                                                 ;
+; Total fan-out                               ; 15262                                               ;
+; Average fan-out                             ; 3.44                                                ;
++---------------------------------------------+-----------------------------------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis Resource Utilization by Entity                                                                                                                                                                                                                                                                                                             ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; Compilation Hierarchy Node                   ; Combinational ALUTs ; Dedicated Logic Registers ; Memory Bits ; DSP Elements ; DSP 9x9 ; DSP 18x18 ; Pins ; Virtual Pins ; Full Hierarchy Name                                                                                                                              ; Entity Name         ; Library Name ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+; |block                                       ; 3566 (0)            ; 749 (0)                   ; 8192        ; 0            ; 0       ; 0         ; 58   ; 0            ; |block                                                                                                                                           ; block               ; work         ;
+;    |FREQUENCIES:inst|                        ; 40 (40)             ; 18 (18)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|FREQUENCIES:inst                                                                                                                          ; FREQUENCIES         ; work         ;
+;    |bjdjqd:inst9|                            ; 64 (64)             ; 34 (34)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|bjdjqd:inst9                                                                                                                              ; bjdjqd              ; work         ;
+;    |caculator:inst7|                         ; 25 (25)             ; 14 (14)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|caculator:inst7                                                                                                                           ; caculator           ; work         ;
+;    |judge:inst3|                             ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|judge:inst3                                                                                                                               ; judge               ; work         ;
+;    |leds7:inst5|                             ; 130 (130)           ; 36 (36)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|leds7:inst5                                                                                                                               ; leds7               ; work         ;
+;    |oled_drive:inst6|                        ; 2731 (10)           ; 246 (0)                   ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6                                                                                                                          ; oled_drive          ; work         ;
+;       |clk_fenpin:clk_fenpin_inst|           ; 35 (35)             ; 27 (27)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|clk_fenpin:clk_fenpin_inst                                                                                               ; clk_fenpin          ; work         ;
+;       |oled_init:oled_init_inst|             ; 149 (127)           ; 66 (66)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|oled_init:oled_init_inst                                                                                                 ; oled_init           ; work         ;
+;          |lpm_divide:Mod0|                   ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0                                                                                 ; lpm_divide          ; work         ;
+;             |lpm_divide_h9m:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0|lpm_divide_h9m:auto_generated                                                   ; lpm_divide_h9m      ; work         ;
+;                |sign_div_unsign_6kh:divider| ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0|lpm_divide_h9m:auto_generated|sign_div_unsign_6kh:divider                       ; sign_div_unsign_6kh ; work         ;
+;                   |alt_u_div_04f:divider|    ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0|lpm_divide_h9m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_04f:divider ; alt_u_div_04f       ; work         ;
+;       |ram_read:ram_read_inst|               ; 131 (109)           ; 56 (56)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_read:ram_read_inst                                                                                                   ; ram_read            ; work         ;
+;          |lpm_divide:Mod0|                   ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_read:ram_read_inst|lpm_divide:Mod0                                                                                   ; lpm_divide          ; work         ;
+;             |lpm_divide_h9m:auto_generated|  ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_read:ram_read_inst|lpm_divide:Mod0|lpm_divide_h9m:auto_generated                                                     ; lpm_divide_h9m      ; work         ;
+;                |sign_div_unsign_6kh:divider| ; 22 (0)              ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_read:ram_read_inst|lpm_divide:Mod0|lpm_divide_h9m:auto_generated|sign_div_unsign_6kh:divider                         ; sign_div_unsign_6kh ; work         ;
+;                   |alt_u_div_04f:divider|    ; 22 (22)             ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_read:ram_read_inst|lpm_divide:Mod0|lpm_divide_h9m:auto_generated|sign_div_unsign_6kh:divider|alt_u_div_04f:divider   ; alt_u_div_04f       ; work         ;
+;       |ram_show:ram_show_inst|               ; 1 (0)               ; 1 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_show:ram_show_inst                                                                                                   ; ram_show            ; work         ;
+;          |altsyncram:altsyncram_component|   ; 1 (0)               ; 1 (0)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component                                                                   ; altsyncram          ; work         ;
+;             |altsyncram_0ar1:auto_generated| ; 1 (1)               ; 1 (1)                     ; 8192        ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component|altsyncram_0ar1:auto_generated                                    ; altsyncram_0ar1     ; work         ;
+;       |ram_write:ram_write_inst|             ; 2388 (2388)         ; 86 (86)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|ram_write:ram_write_inst                                                                                                 ; ram_write           ; work         ;
+;       |spi_writebyte:spi_writebyte_inst|     ; 17 (17)             ; 10 (10)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|oled_drive:inst6|spi_writebyte:spi_writebyte_inst                                                                                         ; spi_writebyte       ; work         ;
+;    |sm_display:inst1|                        ; 66 (66)             ; 31 (31)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|sm_display:inst1                                                                                                                          ; sm_display          ; work         ;
+;    |top:inst8|                               ; 503 (78)            ; 370 (66)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8                                                                                                                                 ; top                 ; work         ;
+;       |ax_debounce:ax_debounce_m0|           ; 77 (77)             ; 37 (37)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|ax_debounce:ax_debounce_m0                                                                                                      ; ax_debounce         ; work         ;
+;       |ax_pwm:ax_pwm_m0|                     ; 79 (79)             ; 65 (65)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|ax_pwm:ax_pwm_m0                                                                                                                ; ax_pwm              ; work         ;
+;       |ds1302_test:ds1302_test_m0|           ; 145 (9)             ; 153 (8)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|ds1302_test:ds1302_test_m0                                                                                                      ; ds1302_test         ; work         ;
+;          |ds1302:ds1302_m0|                  ; 136 (29)            ; 145 (54)                  ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0                                                                                     ; ds1302              ; work         ;
+;             |ds1302_io:ds1302_io_m0|         ; 107 (50)            ; 91 (47)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0                                                              ; ds1302_io           ; work         ;
+;                |spi_master:spi_master_m0|    ; 57 (57)             ; 44 (44)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0                                     ; spi_master          ; work         ;
+;       |seg_bcd:seg_bcd_m0|                   ; 124 (0)             ; 49 (0)                    ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0                                                                                                              ; seg_bcd             ; work         ;
+;          |seg_decoder:seg_decoder_m0|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m0                                                                                   ; seg_decoder         ; work         ;
+;          |seg_decoder:seg_decoder_m1|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m1                                                                                   ; seg_decoder         ; work         ;
+;          |seg_decoder:seg_decoder_m2|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m2                                                                                   ; seg_decoder         ; work         ;
+;          |seg_decoder:seg_decoder_m3|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m3                                                                                   ; seg_decoder         ; work         ;
+;          |seg_decoder:seg_decoder_m4|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m4                                                                                   ; seg_decoder         ; work         ;
+;          |seg_decoder:seg_decoder_m5|        ; 7 (7)               ; 0 (0)                     ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m5                                                                                   ; seg_decoder         ; work         ;
+;          |seg_scan:seg_scan_m0|              ; 82 (82)             ; 49 (49)                   ; 0           ; 0            ; 0       ; 0         ; 0    ; 0            ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0                                                                                         ; seg_scan            ; work         ;
++----------------------------------------------+---------------------+---------------------------+-------------+--------------+---------+-----------+------+--------------+--------------------------------------------------------------------------------------------------------------------------------------------------+---------------------+--------------+
+Note: For table entries with two numbers listed, the numbers in parentheses indicate the number of resources of the given type used by the specific entity alone. The numbers listed outside of parentheses indicate the total resources of the given type used by the specific entity and all of its sub-entities in the hierarchy.
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Analysis & Synthesis RAM Summary                                                                                                                                                                                      ;
++-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; Name                                                                                                              ; Type ; Mode             ; Port A Depth ; Port A Width ; Port B Depth ; Port B Width ; Size ; MIF  ;
++-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+; oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component|altsyncram_0ar1:auto_generated|ALTSYNCRAM ; AUTO ; Simple Dual Port ; 1024         ; 8            ; 1024         ; 8            ; 8192 ; None ;
++-------------------------------------------------------------------------------------------------------------------+------+------------------+--------------+--------------+--------------+--------------+------+------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------+
+; State Machine - |block|bjdjqd:inst9|state            ;
++----------+----------+----------+----------+----------+
+; Name     ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++----------+----------+----------+----------+----------+
+; state.s0 ; 0        ; 0        ; 0        ; 0        ;
+; state.s1 ; 0        ; 0        ; 1        ; 1        ;
+; state.s2 ; 0        ; 1        ; 0        ; 1        ;
+; state.s3 ; 1        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------+
+; State Machine - |block|top:inst8|state ;
++--------------+-------------------------+
+; Name         ; state.BUZZER            ;
++--------------+-------------------------+
+; state.IDLE   ; 0                       ;
+; state.BUZZER ; 1                       ;
++--------------+-------------------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------+
+; State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|state                                  ;
++------------------+--------------+------------------+--------------+--------------+-----------------+
+; Name             ; state.S_WAIT ; state.S_WRITE_CH ; state.S_READ ; state.S_IDLE ; state.S_READ_CH ;
++------------------+--------------+------------------+--------------+--------------+-----------------+
+; state.S_IDLE     ; 0            ; 0                ; 0            ; 0            ; 0               ;
+; state.S_READ     ; 0            ; 0                ; 1            ; 1            ; 0               ;
+; state.S_READ_CH  ; 0            ; 0                ; 0            ; 1            ; 1               ;
+; state.S_WRITE_CH ; 0            ; 1                ; 0            ; 1            ; 0               ;
+; state.S_WAIT     ; 1            ; 0                ; 0            ; 1            ; 0               ;
++------------------+--------------+------------------+--------------+--------------+-----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|state                                                                                                                                                                                                                                 ;
++-----------------+-----------------+-------------+-----------------+-----------------+----------------+-----------------+----------------+----------------+-----------------+-----------------+----------------+-----------------+----------------+----------------+---------------+--------------+-----------------+
+; Name            ; state.S_RD_DATE ; state.S_ACK ; state.S_RD_YEAR ; state.S_RD_WEEK ; state.S_RD_MON ; state.S_RD_HOUR ; state.S_RD_MIN ; state.S_RD_SEC ; state.S_WR_YEAR ; state.S_WR_WEEK ; state.S_WR_MON ; state.S_WR_HOUR ; state.S_WR_MIN ; state.S_WR_SEC ; state.S_WR_WP ; state.S_IDLE ; state.S_WR_DATE ;
++-----------------+-----------------+-------------+-----------------+-----------------+----------------+-----------------+----------------+----------------+-----------------+-----------------+----------------+-----------------+----------------+----------------+---------------+--------------+-----------------+
+; state.S_IDLE    ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 0            ; 0               ;
+; state.S_WR_WP   ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 1             ; 1            ; 0               ;
+; state.S_WR_SEC  ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 1              ; 0             ; 1            ; 0               ;
+; state.S_WR_MIN  ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 1              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_WR_HOUR ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 1               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_WR_MON  ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 1              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_WR_WEEK ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 1               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_WR_YEAR ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 1               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_SEC  ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 1              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_MIN  ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 1              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_HOUR ; 0               ; 0           ; 0               ; 0               ; 0              ; 1               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_MON  ; 0               ; 0           ; 0               ; 0               ; 1              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_WEEK ; 0               ; 0           ; 0               ; 1               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_YEAR ; 0               ; 0           ; 1               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_ACK     ; 0               ; 1           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_RD_DATE ; 1               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 0               ;
+; state.S_WR_DATE ; 0               ; 0           ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0               ; 0               ; 0              ; 0               ; 0              ; 0              ; 0             ; 1            ; 1               ;
++-----------------+-----------------+-------------+-----------------+-----------------+----------------+-----------------+----------------+----------------+-----------------+-----------------+----------------+-----------------+----------------+----------------+---------------+--------------+-----------------+
+
+
+Encoding Type:  One-Hot
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|state                                                                                           ;
++--------------------+-------------+----------------+--------------------+--------------------+---------------+-------------------+-------------------+--------------+-----------------+--------------+
+; Name               ; state.S_ACK ; state.S_CE_LOW ; state.S_WRITE_DATA ; state.S_WRITE_ADDR ; state.S_WRITE ; state.S_READ_DATA ; state.S_READ_ADDR ; state.S_READ ; state.S_CE_HIGH ; state.S_IDLE ;
++--------------------+-------------+----------------+--------------------+--------------------+---------------+-------------------+-------------------+--------------+-----------------+--------------+
+; state.S_IDLE       ; 0           ; 0              ; 0                  ; 0                  ; 0             ; 0                 ; 0                 ; 0            ; 0               ; 0            ;
+; state.S_CE_HIGH    ; 0           ; 0              ; 0                  ; 0                  ; 0             ; 0                 ; 0                 ; 0            ; 1               ; 1            ;
+; state.S_READ       ; 0           ; 0              ; 0                  ; 0                  ; 0             ; 0                 ; 0                 ; 1            ; 0               ; 1            ;
+; state.S_READ_ADDR  ; 0           ; 0              ; 0                  ; 0                  ; 0             ; 0                 ; 1                 ; 0            ; 0               ; 1            ;
+; state.S_READ_DATA  ; 0           ; 0              ; 0                  ; 0                  ; 0             ; 1                 ; 0                 ; 0            ; 0               ; 1            ;
+; state.S_WRITE      ; 0           ; 0              ; 0                  ; 0                  ; 1             ; 0                 ; 0                 ; 0            ; 0               ; 1            ;
+; state.S_WRITE_ADDR ; 0           ; 0              ; 0                  ; 1                  ; 0             ; 0                 ; 0                 ; 0            ; 0               ; 1            ;
+; state.S_WRITE_DATA ; 0           ; 0              ; 1                  ; 0                  ; 0             ; 0                 ; 0                 ; 0            ; 0               ; 1            ;
+; state.S_CE_LOW     ; 0           ; 1              ; 0                  ; 0                  ; 0             ; 0                 ; 0                 ; 0            ; 0               ; 1            ;
+; state.S_ACK        ; 1           ; 0              ; 0                  ; 0                  ; 0             ; 0                 ; 0                 ; 0            ; 0               ; 1            ;
++--------------------+-------------+----------------+--------------------+--------------------+---------------+-------------------+-------------------+--------------+-----------------+--------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|state ;
++-----------------------+----------------+-----------------------+-----------+-----------------+-----------------+-------------------+
+; Name                  ; state.ACK_WAIT ; state.LAST_HALF_CYCLE ; state.ACK ; state.DCLK_IDLE ; state.DCLK_EDGE ; state.IDLE        ;
++-----------------------+----------------+-----------------------+-----------+-----------------+-----------------+-------------------+
+; state.IDLE            ; 0              ; 0                     ; 0         ; 0               ; 0               ; 0                 ;
+; state.DCLK_EDGE       ; 0              ; 0                     ; 0         ; 0               ; 1               ; 1                 ;
+; state.DCLK_IDLE       ; 0              ; 0                     ; 0         ; 1               ; 0               ; 1                 ;
+; state.ACK             ; 0              ; 0                     ; 1         ; 0               ; 0               ; 1                 ;
+; state.LAST_HALF_CYCLE ; 0              ; 1                     ; 0         ; 0               ; 0               ; 1                 ;
+; state.ACK_WAIT        ; 1              ; 0                     ; 0         ; 0               ; 0               ; 1                 ;
++-----------------------+----------------+-----------------------+-----------+-----------------+-----------------+-------------------+
+
+
+Encoding Type:  One-Hot
++------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |block|oled_drive:inst6|ram_write:ram_write_inst|state                                                       ;
++-----------------+-------------+---------------+-------------+----------------+------------+-----------------+----------------+
+; Name            ; state.Clear ; state.Welcome ; state.Error ; state.InputKey ; state.Done ; state.WriteData ; state.WaitInit ;
++-----------------+-------------+---------------+-------------+----------------+------------+-----------------+----------------+
+; state.WaitInit  ; 0           ; 0             ; 0           ; 0              ; 0          ; 0               ; 0              ;
+; state.WriteData ; 0           ; 0             ; 0           ; 0              ; 0          ; 1               ; 1              ;
+; state.Done      ; 0           ; 0             ; 0           ; 0              ; 1          ; 0               ; 1              ;
+; state.InputKey  ; 0           ; 0             ; 0           ; 1              ; 0          ; 0               ; 1              ;
+; state.Error     ; 0           ; 0             ; 1           ; 0              ; 0          ; 0               ; 1              ;
+; state.Welcome   ; 0           ; 1             ; 0           ; 0              ; 0          ; 0               ; 1              ;
+; state.Clear     ; 1           ; 0             ; 0           ; 0              ; 0          ; 0               ; 1              ;
++-----------------+-------------+---------------+-------------+----------------+------------+-----------------+----------------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |block|oled_drive:inst6|ram_read:ram_read_inst|state                                                                             ;
++---------------------+------------+---------------------+-----------------+----------------+--------------------+----------------+----------------+
+; Name                ; state.Done ; state.WaitWriteData ; state.WriteData ; state.ReadData ; state.WaitWriteCmd ; state.WriteCmd ; state.WaitInit ;
++---------------------+------------+---------------------+-----------------+----------------+--------------------+----------------+----------------+
+; state.WaitInit      ; 0          ; 0                   ; 0               ; 0              ; 0                  ; 0              ; 0              ;
+; state.WriteCmd      ; 0          ; 0                   ; 0               ; 0              ; 0                  ; 1              ; 1              ;
+; state.WaitWriteCmd  ; 0          ; 0                   ; 0               ; 0              ; 1                  ; 0              ; 1              ;
+; state.ReadData      ; 0          ; 0                   ; 0               ; 1              ; 0                  ; 0              ; 1              ;
+; state.WriteData     ; 0          ; 0                   ; 1               ; 0              ; 0                  ; 0              ; 1              ;
+; state.WaitWriteData ; 0          ; 1                   ; 0               ; 0              ; 0                  ; 0              ; 1              ;
+; state.Done          ; 1          ; 0                   ; 0               ; 0              ; 0                  ; 0              ; 1              ;
++---------------------+------------+---------------------+-----------------+----------------+--------------------+----------------+----------------+
+
+
+Encoding Type:  One-Hot
++----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; State Machine - |block|oled_drive:inst6|oled_init:oled_init_inst|state                                                                                                                 ;
++---------------------+------------+---------------------+--------------------+--------------+----------------+-----------------+----------------+--------------+------------+-----------+
+; Name                ; state.Done ; state.WaitClearData ; state.WaitClearCmd ; state.WaitOn ; state.WaitInit ; state.ClearData ; state.ClearCmd ; state.OledOn ; state.Init ; state.Rst ;
++---------------------+------------+---------------------+--------------------+--------------+----------------+-----------------+----------------+--------------+------------+-----------+
+; state.Rst           ; 0          ; 0                   ; 0                  ; 0            ; 0              ; 0               ; 0              ; 0            ; 0          ; 0         ;
+; state.Init          ; 0          ; 0                   ; 0                  ; 0            ; 0              ; 0               ; 0              ; 0            ; 1          ; 1         ;
+; state.OledOn        ; 0          ; 0                   ; 0                  ; 0            ; 0              ; 0               ; 0              ; 1            ; 0          ; 1         ;
+; state.ClearCmd      ; 0          ; 0                   ; 0                  ; 0            ; 0              ; 0               ; 1              ; 0            ; 0          ; 1         ;
+; state.ClearData     ; 0          ; 0                   ; 0                  ; 0            ; 0              ; 1               ; 0              ; 0            ; 0          ; 1         ;
+; state.WaitInit      ; 0          ; 0                   ; 0                  ; 0            ; 1              ; 0               ; 0              ; 0            ; 0          ; 1         ;
+; state.WaitOn        ; 0          ; 0                   ; 0                  ; 1            ; 0              ; 0               ; 0              ; 0            ; 0          ; 1         ;
+; state.WaitClearCmd  ; 0          ; 0                   ; 1                  ; 0            ; 0              ; 0               ; 0              ; 0            ; 0          ; 1         ;
+; state.WaitClearData ; 0          ; 1                   ; 0                  ; 0            ; 0              ; 0               ; 0              ; 0            ; 0          ; 1         ;
+; state.Done          ; 1          ; 0                   ; 0                  ; 0            ; 0              ; 0               ; 0              ; 0            ; 0          ; 1         ;
++---------------------+------------+---------------------+--------------------+--------------+----------------+-----------------+----------------+--------------+------------+-----------+
+
+
+Encoding Type:  One-Hot
++--------------------------------------------------------------------------------+
+; State Machine - |block|oled_drive:inst6|spi_writebyte:spi_writebyte_inst|state ;
++------------+------------+----------+----------+--------------------------------+
+; Name       ; state.Done ; state.S2 ; state.S1 ; state.S0                       ;
++------------+------------+----------+----------+--------------------------------+
+; state.S0   ; 0          ; 0        ; 0        ; 0                              ;
+; state.S1   ; 0          ; 0        ; 1        ; 1                              ;
+; state.S2   ; 0          ; 1        ; 0        ; 1                              ;
+; state.Done ; 1          ; 0        ; 0        ; 1                              ;
++------------+------------+----------+----------+--------------------------------+
+
+
+Encoding Type:  One-Hot
++---------------------------------------------------------------------------------------+
+; State Machine - |block|caculator:inst7|state                                          ;
++----------+----------+----------+----------+----------+----------+----------+----------+
+; Name     ; state.s6 ; state.s5 ; state.s4 ; state.s3 ; state.s2 ; state.s1 ; state.s0 ;
++----------+----------+----------+----------+----------+----------+----------+----------+
+; state.s0 ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ; 0        ;
+; state.s1 ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ; 1        ;
+; state.s2 ; 0        ; 0        ; 0        ; 0        ; 1        ; 0        ; 1        ;
+; state.s3 ; 0        ; 0        ; 0        ; 1        ; 0        ; 0        ; 1        ;
+; state.s4 ; 0        ; 0        ; 1        ; 0        ; 0        ; 0        ; 1        ;
+; state.s5 ; 0        ; 1        ; 0        ; 0        ; 0        ; 0        ; 1        ;
+; state.s6 ; 1        ; 0        ; 0        ; 0        ; 0        ; 0        ; 1        ;
++----------+----------+----------+----------+----------+----------+----------+----------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Registers Removed During Synthesis                                                                                                                                                                                    ;
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+; Register name                                                                                                 ; Reason for Removal                                                                                    ;
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|write_addr[4..6]                                        ; Stuck at GND due to stuck port data_in                                                                ;
+; sm_display:inst1|a[0,8,16,24]                                                                                 ; Stuck at VCC due to stuck port data_in                                                                ;
+; top:inst8|period[0,4..6,9..12,14..31]                                                                         ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ax_pwm:ax_pwm_m0|period_r[0,4..6,9..12,14..31]                                                      ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[0]                                                        ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_second_reg[1..7]                                                   ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[1,3,5..7]                                               ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[1,2,5..7]                                                 ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[2,3,5..7]                                                 ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_month_reg[0,2,3,5..7]                                              ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_week_reg[0,2..7]                                                   ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[3,5..7]                                                   ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|read_addr[4..6]                                         ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|write_data[5..7]                                        ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[1]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[2]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[2]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[4]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_year_reg[4]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_week_reg[1]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_week_reg[1]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_month_reg[1]                                   ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_month_reg[1]                                                       ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_month_reg[4]                                   ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_month_reg[4]                                                       ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[0]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[0]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[1]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[1]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[4]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_date_reg[4]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[0]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[0]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[3]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[3]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[4]                                    ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_hour_reg[4]                                                        ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[0]                                  ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[0]                                                      ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[2]                                  ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[2]                                                      ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[4]                                  ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_minute_reg[4]                                                      ; Merged with top:inst8|ds1302_test:ds1302_test_m0|write_second_reg[0]                                  ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|send_data[1]                     ; Merged with top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|send_data[2] ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[9]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[9]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[8]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[8]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[6]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[6]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[4]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[4]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[3]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[3]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[2]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[2]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[1]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[1]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[0]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[0]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[7]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[7]                                       ;
+; oled_drive:inst6|ram_write:ram_write_inst|cnt_zmw[5]                                                          ; Merged with oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[5]                                       ;
+; FREQUENCIES:inst|T[15]                                                                                        ; Merged with FREQUENCIES:inst|T1[15]                                                                   ;
+; FREQUENCIES:inst|T[14]                                                                                        ; Merged with FREQUENCIES:inst|T1[14]                                                                   ;
+; FREQUENCIES:inst|T[13]                                                                                        ; Merged with FREQUENCIES:inst|T1[13]                                                                   ;
+; FREQUENCIES:inst|T[12]                                                                                        ; Merged with FREQUENCIES:inst|T1[12]                                                                   ;
+; FREQUENCIES:inst|T[11]                                                                                        ; Merged with FREQUENCIES:inst|T1[11]                                                                   ;
+; FREQUENCIES:inst|T[10]                                                                                        ; Merged with FREQUENCIES:inst|T1[10]                                                                   ;
+; FREQUENCIES:inst|T[9]                                                                                         ; Merged with FREQUENCIES:inst|T1[9]                                                                    ;
+; FREQUENCIES:inst|T[8]                                                                                         ; Merged with FREQUENCIES:inst|T1[8]                                                                    ;
+; FREQUENCIES:inst|T[7]                                                                                         ; Merged with FREQUENCIES:inst|T1[7]                                                                    ;
+; FREQUENCIES:inst|T[6]                                                                                         ; Merged with FREQUENCIES:inst|T1[6]                                                                    ;
+; FREQUENCIES:inst|T[5]                                                                                         ; Merged with FREQUENCIES:inst|T1[5]                                                                    ;
+; FREQUENCIES:inst|T[4]                                                                                         ; Merged with FREQUENCIES:inst|T1[4]                                                                    ;
+; FREQUENCIES:inst|T[3]                                                                                         ; Merged with FREQUENCIES:inst|T1[3]                                                                    ;
+; FREQUENCIES:inst|T[2]                                                                                         ; Merged with FREQUENCIES:inst|T1[2]                                                                    ;
+; FREQUENCIES:inst|T[1]                                                                                         ; Merged with FREQUENCIES:inst|T1[1]                                                                    ;
+; FREQUENCIES:inst|T[0]                                                                                         ; Merged with FREQUENCIES:inst|T1[0]                                                                    ;
+; top:inst8|ax_pwm:ax_pwm_m0|period_r[1..3,7,8]                                                                 ; Merged with top:inst8|ax_pwm:ax_pwm_m0|period_r[13]                                                   ;
+; top:inst8|period[1..3,7,8]                                                                                    ; Merged with top:inst8|period[13]                                                                      ;
+; top:inst8|ax_pwm:ax_pwm_m0|period_cnt[0]                                                                      ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|send_data[2]                     ; Stuck at GND due to stuck port data_in                                                                ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[7]                                                 ; Stuck at VCC due to stuck port data_in                                                                ;
+; top:inst8|state~6                                                                                             ; Lost fanout                                                                                           ;
+; top:inst8|state~7                                                                                             ; Lost fanout                                                                                           ;
+; top:inst8|state~8                                                                                             ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|state~4                                                                  ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|state~6                                                                  ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|state~4                                                 ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|state~5                                                 ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|state~6                                                 ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|state~7                                                 ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|state~4                          ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|state~5                          ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|state~6                          ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|state~7                          ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|state~4 ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|state~5 ; Lost fanout                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|state~6 ; Lost fanout                                                                                           ;
+; oled_drive:inst6|ram_write:ram_write_inst|state~4                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|ram_write:ram_write_inst|state~5                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|ram_write:ram_write_inst|state~6                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|ram_read:ram_read_inst|state~4                                                               ; Lost fanout                                                                                           ;
+; oled_drive:inst6|ram_read:ram_read_inst|state~5                                                               ; Lost fanout                                                                                           ;
+; oled_drive:inst6|ram_read:ram_read_inst|state~6                                                               ; Lost fanout                                                                                           ;
+; oled_drive:inst6|oled_init:oled_init_inst|state~4                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|oled_init:oled_init_inst|state~5                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|oled_init:oled_init_inst|state~6                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|oled_init:oled_init_inst|state~7                                                             ; Lost fanout                                                                                           ;
+; oled_drive:inst6|spi_writebyte:spi_writebyte_inst|state~4                                                     ; Lost fanout                                                                                           ;
+; oled_drive:inst6|spi_writebyte:spi_writebyte_inst|state~5                                                     ; Lost fanout                                                                                           ;
+; Total Number of Removed Registers = 188                                                                       ;                                                                                                       ;
++---------------------------------------------------------------------------------------------------------------+-------------------------------------------------------------------------------------------------------+
+
+
++---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Removed Registers Triggering Further Register Optimizations                                                                                                                                 ;
++---------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+; Register name                                                       ; Reason for Removal        ; Registers Removed due to This Register                                                    ;
++---------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|write_addr[5] ; Stuck at GND              ; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|send_data[2] ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[31]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[31]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[30]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[30]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[29]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[29]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[28]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[28]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[27]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[27]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[26]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[26]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[25]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[25]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[24]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[24]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[23]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[23]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[22]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[22]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[21]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[21]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[20]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[20]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[19]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[19]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[18]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[18]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[17]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[17]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[16]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[16]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[15]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[15]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[14]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[14]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[12]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[12]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[11]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[11]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[10]                                                ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[10]                                                   ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[9]                                                 ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[9]                                                    ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[6]                                                 ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[6]                                                    ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[5]                                                 ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[5]                                                    ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[4]                                                 ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[4]                                                    ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|period[0]                                                 ; Stuck at GND              ; top:inst8|ax_pwm:ax_pwm_m0|period_r[0]                                                    ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_second_reg[7]            ; Stuck at GND              ; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|write_data[7]                       ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_second_reg[6]            ; Stuck at GND              ; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|write_data[6]                       ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
+; top:inst8|ds1302_test:ds1302_test_m0|write_second_reg[5]            ; Stuck at GND              ; top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|write_data[5]                       ;
+;                                                                     ; due to stuck port data_in ;                                                                                           ;
++---------------------------------------------------------------------+---------------------------+-------------------------------------------------------------------------------------------+
+
+
++------------------------------------------------------+
+; General Register Statistics                          ;
++----------------------------------------------+-------+
+; Statistic                                    ; Value ;
++----------------------------------------------+-------+
+; Total registers                              ; 749   ;
+; Number of registers using Synchronous Clear  ; 243   ;
+; Number of registers using Synchronous Load   ; 8     ;
+; Number of registers using Asynchronous Clear ; 623   ;
+; Number of registers using Asynchronous Load  ; 0     ;
+; Number of registers using Clock Enable       ; 282   ;
+; Number of registers using Preset             ; 0     ;
++----------------------------------------------+-------+
+
+
++-------------------------------------------------------------------------+
+; Inverted Register Statistics                                            ;
++---------------------------------------------------------------+---------+
+; Inverted Register                                             ; Fan out ;
++---------------------------------------------------------------+---------+
+; top:inst8|duty[28]                                            ; 2       ;
+; top:inst8|duty[27]                                            ; 2       ;
+; top:inst8|duty[24]                                            ; 2       ;
+; top:inst8|duty[23]                                            ; 2       ;
+; top:inst8|duty[20]                                            ; 2       ;
+; top:inst8|duty[19]                                            ; 2       ;
+; top:inst8|duty[16]                                            ; 2       ;
+; top:inst8|duty[15]                                            ; 2       ;
+; top:inst8|duty[12]                                            ; 2       ;
+; top:inst8|duty[11]                                            ; 2       ;
+; top:inst8|duty[8]                                             ; 2       ;
+; top:inst8|duty[7]                                             ; 2       ;
+; top:inst8|duty[4]                                             ; 2       ;
+; top:inst8|duty[3]                                             ; 2       ;
+; oled_drive:inst6|oled_init:oled_init_inst|oled_dc             ; 2       ;
+; oled_drive:inst6|ram_read:ram_read_inst|oled_dc               ; 2       ;
+; oled_drive:inst6|spi_writebyte:spi_writebyte_inst|sclk        ; 2       ;
+; leds7:inst5|code[15]                                          ; 9       ;
+; leds7:inst5|code[14]                                          ; 14      ;
+; leds7:inst5|code[13]                                          ; 11      ;
+; leds7:inst5|code[12]                                          ; 11      ;
+; leds7:inst5|code[11]                                          ; 9       ;
+; leds7:inst5|code[10]                                          ; 9       ;
+; leds7:inst5|code[8]                                           ; 11      ;
+; leds7:inst5|code[9]                                           ; 11      ;
+; leds7:inst5|code[7]                                           ; 9       ;
+; leds7:inst5|code[6]                                           ; 12      ;
+; leds7:inst5|code[5]                                           ; 11      ;
+; leds7:inst5|code[4]                                           ; 11      ;
+; leds7:inst5|code[3]                                           ; 9       ;
+; leds7:inst5|code[1]                                           ; 12      ;
+; leds7:inst5|code[0]                                           ; 11      ;
+; leds7:inst5|code[2]                                           ; 12      ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[6] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[5] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[4] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[3] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[2] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[1] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[0] ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_sel[5]  ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_sel[4]  ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_sel[3]  ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_sel[2]  ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_sel[1]  ; 1       ;
+; top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_sel[0]  ; 1       ;
+; oled_drive:inst6|oled_init:oled_init_inst|data[4]             ; 2       ;
+; FREQUENCIES:inst|T1[0]                                        ; 1       ;
+; top:inst8|duty[0]                                             ; 3       ;
+; top:inst8|ax_debounce:ax_debounce_m0|button_out               ; 3       ;
+; top:inst8|ax_debounce:ax_debounce_m0|button_out_d0            ; 1       ;
+; oled_drive:inst6|oled_init:oled_init_inst|us_cnt_clr          ; 21      ;
+; oled_drive:inst6|ram_read:ram_read_inst|us_cnt_clr            ; 22      ;
+; oled_drive:inst6|ram_write:ram_write_inst|wraddress[0]        ; 2       ;
+; oled_drive:inst6|ram_write:ram_write_inst|wraddress[1]        ; 2       ;
+; oled_drive:inst6|ram_write:ram_write_inst|wraddress[2]        ; 2       ;
+; oled_drive:inst6|ram_write:ram_write_inst|wraddress[4]        ; 2       ;
+; oled_drive:inst6|ram_write:ram_write_inst|wraddress[8]        ; 2       ;
+; Total number of inverted registers = 58                       ;         ;
++---------------------------------------------------------------+---------+
+
+
++--------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Restructuring Statistics (Restructuring Performed)                                                                                                                                                                             ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------+
+; Multiplexer Inputs ; Bus Width ; Baseline Area ; Area if Restructured ; Saving if Restructured ; Registered ; Example Multiplexer Output                                                                                                   ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------+
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|clk_edge_cnt[4] ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|welcome_flag[12]                                                            ;
+; 3:1                ; 25 bits   ; 50 LEs        ; 25 LEs               ; 25 LEs                 ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|error_flag[0]                                                               ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |block|oled_drive:inst6|spi_writebyte:spi_writebyte_inst|cnt[1]                                                              ;
+; 3:1                ; 4 bits    ; 8 LEs         ; 4 LEs                ; 4 LEs                  ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[9]                                                                   ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|MOSI_shift[1]   ;
+; 3:1                ; 5 bits    ; 10 LEs        ; 5 LEs                ; 5 LEs                  ; Yes        ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|MOSI_shift[5]   ;
+; 3:1                ; 8 bits    ; 16 LEs        ; 8 LEs                ; 8 LEs                  ; Yes        ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0|MISO_shift[7]   ;
+; 4:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|send_data[3]                             ;
+; 4:1                ; 3 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|send_data[6]                             ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; Yes        ; |block|oled_drive:inst6|ram_read:ram_read_inst|data[6]                                                                       ;
+; 3:1                ; 6 bits    ; 12 LEs        ; 6 LEs                ; 6 LEs                  ; Yes        ; |block|oled_drive:inst6|ram_read:ram_read_inst|data[4]                                                                       ;
+; 5:1                ; 5 bits    ; 15 LEs        ; 10 LEs               ; 5 LEs                  ; Yes        ; |block|oled_drive:inst6|oled_init:oled_init_inst|data[5]                                                                     ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[7]                                                                   ;
+; 5:1                ; 2 bits    ; 6 LEs         ; 6 LEs                ; 0 LEs                  ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|cnt_zm[8]                                                                   ;
+; 4:1                ; 11 bits   ; 22 LEs        ; 11 LEs               ; 11 LEs                 ; Yes        ; |block|bjdjqd:inst9|count[8]                                                                                                 ;
+; 5:1                ; 3 bits    ; 9 LEs         ; 0 LEs                ; 9 LEs                  ; Yes        ; |block|caculator:inst7|cnt[1]                                                                                                ;
+; 8:1                ; 2 bits    ; 10 LEs        ; 4 LEs                ; 6 LEs                  ; Yes        ; |block|caculator:inst7|ledw                                                                                                  ;
+; 28:1               ; 3 bits    ; 54 LEs        ; 3 LEs                ; 51 LEs                 ; Yes        ; |block|leds7:inst5|num[0]~reg0                                                                                               ;
+; 29:1               ; 3 bits    ; 57 LEs        ; 3 LEs                ; 54 LEs                 ; Yes        ; |block|leds7:inst5|count[0]                                                                                                  ;
+; 29:1               ; 6 bits    ; 114 LEs       ; 6 LEs                ; 108 LEs                ; Yes        ; |block|leds7:inst5|n[1]                                                                                                      ;
+; 4645:1             ; 7 bits    ; 21672 LEs     ; 16898 LEs            ; 4774 LEs               ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|data[7]                                                                     ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 4 LEs                ; 0 LEs                  ; Yes        ; |block|oled_drive:inst6|ram_write:ram_write_inst|wraddress[0]                                                                ;
+; 16:1               ; 7 bits    ; 70 LEs        ; 35 LEs               ; 35 LEs                 ; Yes        ; |block|top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0|seg_data[6]                                                         ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |block|top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|next_state.S_WRITE                       ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |block|oled_drive:inst6|ram_write:ram_write_inst|next_state                                                                  ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |block|oled_drive:inst6|ram_read:ram_read_inst|next_state                                                                    ;
+; 3:1                ; 2 bits    ; 4 LEs         ; 2 LEs                ; 2 LEs                  ; No         ; |block|oled_drive:inst6|oled_init:oled_init_inst|next_state                                                                  ;
++--------------------+-----------+---------------+----------------------+------------------------+------------+------------------------------------------------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------------------------------------------------------+
+; Source assignments for oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component|altsyncram_0ar1:auto_generated ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; Assignment                      ; Value              ; From ; To                                                              ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+; OPTIMIZE_POWER_DURING_SYNTHESIS ; NORMAL_COMPILATION ; -    ; -                                                               ;
++---------------------------------+--------------------+------+-----------------------------------------------------------------+
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oled_drive:inst6|spi_writebyte:spi_writebyte_inst ;
++----------------+-------+-----------------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                                  ;
++----------------+-------+-----------------------------------------------------------------------+
+; S0             ; 0     ; Signed Integer                                                        ;
+; S1             ; 1     ; Signed Integer                                                        ;
+; S2             ; 2     ; Signed Integer                                                        ;
+; Done           ; 3     ; Signed Integer                                                        ;
++----------------+-------+-----------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oled_drive:inst6|oled_init:oled_init_inst ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; RST_NUM        ; 10    ; Signed Integer                                                ;
+; Rst            ; 0     ; Signed Integer                                                ;
+; Init           ; 1     ; Signed Integer                                                ;
+; OledOn         ; 2     ; Signed Integer                                                ;
+; ClearCmd       ; 3     ; Signed Integer                                                ;
+; ClearData      ; 4     ; Signed Integer                                                ;
+; WaitInit       ; 5     ; Signed Integer                                                ;
+; WaitOn         ; 6     ; Signed Integer                                                ;
+; WaitClearCmd   ; 7     ; Signed Integer                                                ;
+; WaitClearData  ; 8     ; Signed Integer                                                ;
+; Done           ; 9     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oled_drive:inst6|ram_read:ram_read_inst ;
++----------------+--------+------------------------------------------------------------+
+; Parameter Name ; Value  ; Type                                                       ;
++----------------+--------+------------------------------------------------------------+
+; DELAY          ; 100000 ; Signed Integer                                             ;
+; WaitInit       ; 0      ; Signed Integer                                             ;
+; WriteCmd       ; 1      ; Signed Integer                                             ;
+; WaitWriteCmd   ; 2      ; Signed Integer                                             ;
+; ReadData       ; 3      ; Signed Integer                                             ;
+; WriteData      ; 4      ; Signed Integer                                             ;
+; WaitWriteData  ; 5      ; Signed Integer                                             ;
+; Done           ; 6      ; Signed Integer                                             ;
++----------------+--------+------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oled_drive:inst6|ram_write:ram_write_inst ;
++----------------+-------+---------------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                          ;
++----------------+-------+---------------------------------------------------------------+
+; WaitInit       ; 0     ; Signed Integer                                                ;
+; WriteData      ; 1     ; Signed Integer                                                ;
+; Done           ; 2     ; Signed Integer                                                ;
+; InputKey       ; 3     ; Signed Integer                                                ;
+; Error          ; 4     ; Signed Integer                                                ;
+; Welcome        ; 5     ; Signed Integer                                                ;
+; Clear          ; 6     ; Signed Integer                                                ;
++----------------+-------+---------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; Parameter Name                     ; Value                ; Type                                                     ;
++------------------------------------+----------------------+----------------------------------------------------------+
+; BYTE_SIZE_BLOCK                    ; 8                    ; Untyped                                                  ;
+; AUTO_CARRY_CHAINS                  ; ON                   ; AUTO_CARRY                                               ;
+; IGNORE_CARRY_BUFFERS               ; OFF                  ; IGNORE_CARRY                                             ;
+; AUTO_CASCADE_CHAINS                ; ON                   ; AUTO_CASCADE                                             ;
+; IGNORE_CASCADE_BUFFERS             ; OFF                  ; IGNORE_CASCADE                                           ;
+; WIDTH_BYTEENA                      ; 1                    ; Untyped                                                  ;
+; OPERATION_MODE                     ; DUAL_PORT            ; Untyped                                                  ;
+; WIDTH_A                            ; 8                    ; Signed Integer                                           ;
+; WIDTHAD_A                          ; 10                   ; Signed Integer                                           ;
+; NUMWORDS_A                         ; 1024                 ; Signed Integer                                           ;
+; OUTDATA_REG_A                      ; UNREGISTERED         ; Untyped                                                  ;
+; ADDRESS_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; OUTDATA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_A                   ; NONE                 ; Untyped                                                  ;
+; INDATA_ACLR_A                      ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_A                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_B                            ; 8                    ; Signed Integer                                           ;
+; WIDTHAD_B                          ; 10                   ; Signed Integer                                           ;
+; NUMWORDS_B                         ; 1024                 ; Signed Integer                                           ;
+; INDATA_REG_B                       ; CLOCK1               ; Untyped                                                  ;
+; WRCONTROL_WRADDRESS_REG_B          ; CLOCK1               ; Untyped                                                  ;
+; RDCONTROL_REG_B                    ; CLOCK0               ; Untyped                                                  ;
+; ADDRESS_REG_B                      ; CLOCK0               ; Untyped                                                  ;
+; OUTDATA_REG_B                      ; CLOCK0               ; Untyped                                                  ;
+; BYTEENA_REG_B                      ; CLOCK1               ; Untyped                                                  ;
+; INDATA_ACLR_B                      ; NONE                 ; Untyped                                                  ;
+; WRCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; ADDRESS_ACLR_B                     ; CLEAR0               ; Untyped                                                  ;
+; OUTDATA_ACLR_B                     ; CLEAR0               ; Untyped                                                  ;
+; RDCONTROL_ACLR_B                   ; NONE                 ; Untyped                                                  ;
+; BYTEENA_ACLR_B                     ; NONE                 ; Untyped                                                  ;
+; WIDTH_BYTEENA_A                    ; 1                    ; Signed Integer                                           ;
+; WIDTH_BYTEENA_B                    ; 1                    ; Untyped                                                  ;
+; RAM_BLOCK_TYPE                     ; AUTO                 ; Untyped                                                  ;
+; BYTE_SIZE                          ; 8                    ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE            ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_A      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; READ_DURING_WRITE_MODE_PORT_B      ; NEW_DATA_NO_NBE_READ ; Untyped                                                  ;
+; INIT_FILE                          ; UNUSED               ; Untyped                                                  ;
+; INIT_FILE_LAYOUT                   ; PORT_A               ; Untyped                                                  ;
+; MAXIMUM_DEPTH                      ; 0                    ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_A               ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_INPUT_B               ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_A              ; NORMAL               ; Untyped                                                  ;
+; CLOCK_ENABLE_OUTPUT_B              ; BYPASS               ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_A                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; CLOCK_ENABLE_CORE_B                ; USE_INPUT_CLKEN      ; Untyped                                                  ;
+; ENABLE_ECC                         ; FALSE                ; Untyped                                                  ;
+; ECC_PIPELINE_STAGE_ENABLED         ; FALSE                ; Untyped                                                  ;
+; WIDTH_ECCSTATUS                    ; 3                    ; Untyped                                                  ;
+; DEVICE_FAMILY                      ; Cyclone IV E         ; Untyped                                                  ;
+; CBXI_PARAMETER                     ; altsyncram_0ar1      ; Untyped                                                  ;
++------------------------------------+----------------------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++--------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top:inst8 ;
++----------------+-------+-------------------------------+
+; Parameter Name ; Value ; Type                          ;
++----------------+-------+-------------------------------+
+; IDLE           ; 0     ; Signed Integer                ;
+; BUZZER         ; 1     ; Signed Integer                ;
++----------------+-------+-------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0 ;
++----------------+----------+--------------------------------------------------------------------+
+; Parameter Name ; Value    ; Type                                                               ;
++----------------+----------+--------------------------------------------------------------------+
+; SCAN_FREQ      ; 200      ; Signed Integer                                                     ;
+; CLK_FREQ       ; 50000000 ; Signed Integer                                                     ;
+; SCAN_COUNT     ; 41665    ; Signed Integer                                                     ;
++----------------+----------+--------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-----------------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top:inst8|ax_debounce:ax_debounce_m0 ;
++----------------+-------+----------------------------------------------------------+
+; Parameter Name ; Value ; Type                                                     ;
++----------------+-------+----------------------------------------------------------+
+; N              ; 32    ; Signed Integer                                           ;
+; FREQ           ; 50    ; Signed Integer                                           ;
+; MAX_TIME       ; 20    ; Signed Integer                                           ;
++----------------+-------+----------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++-------------------------------------------------------------------------+
+; Parameter Settings for User Entity Instance: top:inst8|ax_pwm:ax_pwm_m0 ;
++----------------+-------+------------------------------------------------+
+; Parameter Name ; Value ; Type                                           ;
++----------------+-------+------------------------------------------------+
+; N              ; 32    ; Signed Integer                                 ;
++----------------+-------+------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++------------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0 ;
++------------------------+----------------+------------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                             ;
++------------------------+----------------+------------------------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                                          ;
+; LPM_WIDTHD             ; 2              ; Untyped                                                          ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                          ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                          ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                          ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                          ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                          ;
+; CBXI_PARAMETER         ; lpm_divide_h9m ; Untyped                                                          ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                          ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                          ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                       ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                     ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                     ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                   ;
++------------------------+----------------+------------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++----------------------------------------------------------------------------------------------------------+
+; Parameter Settings for Inferred Entity Instance: oled_drive:inst6|ram_read:ram_read_inst|lpm_divide:Mod0 ;
++------------------------+----------------+----------------------------------------------------------------+
+; Parameter Name         ; Value          ; Type                                                           ;
++------------------------+----------------+----------------------------------------------------------------+
+; LPM_WIDTHN             ; 5              ; Untyped                                                        ;
+; LPM_WIDTHD             ; 2              ; Untyped                                                        ;
+; LPM_NREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_DREPRESENTATION    ; UNSIGNED       ; Untyped                                                        ;
+; LPM_PIPELINE           ; 0              ; Untyped                                                        ;
+; LPM_REMAINDERPOSITIVE  ; TRUE           ; Untyped                                                        ;
+; MAXIMIZE_SPEED         ; 5              ; Untyped                                                        ;
+; CBXI_PARAMETER         ; lpm_divide_h9m ; Untyped                                                        ;
+; CARRY_CHAIN            ; MANUAL         ; Untyped                                                        ;
+; OPTIMIZE_FOR_SPEED     ; 5              ; Untyped                                                        ;
+; AUTO_CARRY_CHAINS      ; ON             ; AUTO_CARRY                                                     ;
+; IGNORE_CARRY_BUFFERS   ; OFF            ; IGNORE_CARRY                                                   ;
+; AUTO_CASCADE_CHAINS    ; ON             ; AUTO_CASCADE                                                   ;
+; IGNORE_CASCADE_BUFFERS ; OFF            ; IGNORE_CASCADE                                                 ;
++------------------------+----------------+----------------------------------------------------------------+
+Note: In order to hide this table in the UI and the text report file, please set the "Show Parameter Settings in Synthesis Report" option in "Analysis and Synthesis Settings -> More Settings" to "Off".
+
+
++---------------------------------------------------------------------------------------------------------------------+
+; altsyncram Parameter Settings by Entity Instance                                                                    ;
++-------------------------------------------+-------------------------------------------------------------------------+
+; Name                                      ; Value                                                                   ;
++-------------------------------------------+-------------------------------------------------------------------------+
+; Number of entity instances                ; 1                                                                       ;
+; Entity Instance                           ; oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component ;
+;     -- OPERATION_MODE                     ; DUAL_PORT                                                               ;
+;     -- WIDTH_A                            ; 8                                                                       ;
+;     -- NUMWORDS_A                         ; 1024                                                                    ;
+;     -- OUTDATA_REG_A                      ; UNREGISTERED                                                            ;
+;     -- WIDTH_B                            ; 8                                                                       ;
+;     -- NUMWORDS_B                         ; 1024                                                                    ;
+;     -- ADDRESS_REG_B                      ; CLOCK0                                                                  ;
+;     -- OUTDATA_REG_B                      ; CLOCK0                                                                  ;
+;     -- RAM_BLOCK_TYPE                     ; AUTO                                                                    ;
+;     -- READ_DURING_WRITE_MODE_MIXED_PORTS ; DONT_CARE                                                               ;
++-------------------------------------------+-------------------------------------------------------------------------+
+
+
++------------------------------------------------------------------+
+; Port Connectivity Checks: "top:inst8|ax_debounce:ax_debounce_m0" ;
++----------------+--------+----------+-----------------------------+
+; Port           ; Type   ; Severity ; Details                     ;
++----------------+--------+----------+-----------------------------+
+; button_posedge ; Output ; Info     ; Explicitly unconnected      ;
+; button_out     ; Output ; Info     ; Explicitly unconnected      ;
++----------------+--------+----------+-----------------------------+
+
+
++-----------------------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0" ;
++----------------+-------+----------+-----------------------------------------------------------------------------------------------+
+; Port           ; Type  ; Severity ; Details                                                                                       ;
++----------------+-------+----------+-----------------------------------------------------------------------------------------------+
+; CPOL           ; Input ; Info     ; Stuck at GND                                                                                  ;
+; CPHA           ; Input ; Info     ; Stuck at GND                                                                                  ;
+; clk_div[5..4]  ; Input ; Info     ; Stuck at VCC                                                                                  ;
+; clk_div[15..6] ; Input ; Info     ; Stuck at GND                                                                                  ;
+; clk_div[3..2]  ; Input ; Info     ; Stuck at GND                                                                                  ;
+; clk_div[1]     ; Input ; Info     ; Stuck at VCC                                                                                  ;
+; clk_div[0]     ; Input ; Info     ; Stuck at GND                                                                                  ;
++----------------+-------+----------+-----------------------------------------------------------------------------------------------+
+
+
++----------------------------------------------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top:inst8|ds1302_test:ds1302_test_m0"                                                     ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; Port       ; Type   ; Severity ; Details                                                                             ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+; read_date  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; read_month ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; read_week  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
+; read_year  ; Output ; Info     ; Connected to dangling logic. Logic that only feeds a dangling port will be removed. ;
++------------+--------+----------+-------------------------------------------------------------------------------------+
+
+
++-------------------------------------------------------------------------------+
+; Port Connectivity Checks: "top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0" ;
++---------------+-------+----------+--------------------------------------------+
+; Port          ; Type  ; Severity ; Details                                    ;
++---------------+-------+----------+--------------------------------------------+
+; seg_data_0[7] ; Input ; Info     ; Stuck at VCC                               ;
+; seg_data_1[7] ; Input ; Info     ; Stuck at VCC                               ;
+; seg_data_2[7] ; Input ; Info     ; Stuck at VCC                               ;
+; seg_data_3[7] ; Input ; Info     ; Stuck at VCC                               ;
+; seg_data_4[7] ; Input ; Info     ; Stuck at VCC                               ;
+; seg_data_5[7] ; Input ; Info     ; Stuck at VCC                               ;
++---------------+-------+----------+--------------------------------------------+
+
+
++-----------------------------------------------------------------------+
+; Port Connectivity Checks: "oled_drive:inst6|ram_write:ram_write_inst" ;
++-----------+-------+----------+----------------------------------------+
+; Port      ; Type  ; Severity ; Details                                ;
++-----------+-------+----------+----------------------------------------+
+; en_ram_wr ; Input ; Info     ; Stuck at VCC                           ;
++-----------+-------+----------+----------------------------------------+
+
+
++-----------------------------------------------------+
+; Post-Synthesis Netlist Statistics for Top Partition ;
++-----------------------+-----------------------------+
+; Type                  ; Count                       ;
++-----------------------+-----------------------------+
+; boundary_port         ; 58                          ;
+; cycloneiii_ff         ; 749                         ;
+;     CLR               ; 253                         ;
+;     CLR SCLR          ; 139                         ;
+;     CLR SLD           ; 1                           ;
+;     ENA               ; 10                          ;
+;     ENA CLR           ; 161                         ;
+;     ENA CLR SCLR      ; 62                          ;
+;     ENA CLR SLD       ; 7                           ;
+;     ENA SCLR          ; 42                          ;
+;     plain             ; 74                          ;
+; cycloneiii_io_obuf    ; 1                           ;
+; cycloneiii_lcell_comb ; 3585                        ;
+;     arith             ; 447                         ;
+;         2 data inputs ; 396                         ;
+;         3 data inputs ; 51                          ;
+;     normal            ; 3138                        ;
+;         0 data inputs ; 7                           ;
+;         1 data inputs ; 70                          ;
+;         2 data inputs ; 260                         ;
+;         3 data inputs ; 427                         ;
+;         4 data inputs ; 2374                        ;
+; cycloneiii_ram_block  ; 8                           ;
+;                       ;                             ;
+; Max LUT depth         ; 11.00                       ;
+; Average LUT depth     ; 5.73                        ;
++-----------------------+-----------------------------+
+
+
++-------------------------------+
+; Elapsed Time Per Partition    ;
++----------------+--------------+
+; Partition Name ; Elapsed Time ;
++----------------+--------------+
+; Top            ; 00:00:31     ;
++----------------+--------------+
+
+
++-------------------------------+
+; Analysis & Synthesis Messages ;
++-------------------------------+
+Info: *******************************************************************
+Info: Running Quartus Prime Analysis & Synthesis
+    Info: Version 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+    Info: Processing started: Tue Mar 07 12:10:48 2023
+Info: Command: quartus_map --read_settings_files=on --write_settings_files=off mimasuo -c mimasuo
+Warning (18236): Number of processors has not been specified which may cause overloading on shared machines.  Set the global assignment NUM_PARALLEL_PROCESSORS in your QSF to an appropriate value for best performance.
+Info (20030): Parallel compilation is enabled and will use 4 of the 4 processors detected
+Info (12021): Found 1 design units, including 1 entities, in source file top.v
+    Info (12023): Found entity 1: top File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file spi_master.v
+    Info (12023): Found entity 1: spi_master File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/spi_master.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file seg_scan.v
+    Info (12023): Found entity 1: seg_scan File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_scan.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file seg_decoder.v
+    Info (12023): Found entity 1: seg_decoder File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_decoder.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file seg_bcd.v
+    Info (12023): Found entity 1: seg_bcd File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_bcd.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file ds1302_test.v
+    Info (12023): Found entity 1: ds1302_test File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302_test.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file ds1302_io.v
+    Info (12023): Found entity 1: ds1302_io File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302_io.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file ds1302.v
+    Info (12023): Found entity 1: ds1302 File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file buzzer_pwn_test.v
+    Info (12023): Found entity 1: buzzer_pwm_test File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/buzzer_pwn_test.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ax_pwm.v
+    Info (12023): Found entity 1: ax_pwm File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ax_pwm.v Line: 2
+Info (12021): Found 1 design units, including 1 entities, in source file ax_debounce.v
+    Info (12023): Found entity 1: ax_debounce File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ax_debounce.v Line: 3
+Info (12021): Found 1 design units, including 1 entities, in source file clk_fenpin.v
+    Info (12023): Found entity 1: clk_fenpin File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/clk_fenpin.v Line: 1
+Warning (10275): Verilog HDL Module Instantiation warning at oled_drive.v(100): ignored dangling comma in List of Port Connections File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 100
+Info (12021): Found 1 design units, including 1 entities, in source file oled_drive.v
+    Info (12023): Found entity 1: oled_drive File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ram_write.v
+    Info (12023): Found entity 1: ram_write File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 12
+Info (12021): Found 1 design units, including 1 entities, in source file spi_writebyte.v
+    Info (12023): Found entity 1: spi_writebyte File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/spi_writebyte.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file oled_init.v
+    Info (12023): Found entity 1: oled_init File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 1
+Info (12021): Found 1 design units, including 1 entities, in source file ram_read.v
+    Info (12023): Found entity 1: ram_read File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file caculator.vhd
+    Info (12022): Found design unit 1: caculator-behav File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/caculator.vhd Line: 17
+    Info (12023): Found entity 1: caculator File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/caculator.vhd Line: 5
+Info (12021): Found 2 design units, including 1 entities, in source file frequencies.vhd
+    Info (12022): Found design unit 1: FREQUENCIES-BEHAV File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/FREQUENCIES.vhd Line: 8
+    Info (12023): Found entity 1: FREQUENCIES File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/FREQUENCIES.vhd Line: 3
+Info (12021): Found 2 design units, including 1 entities, in source file sm_display.vhd
+    Info (12022): Found design unit 1: sm_display-behav File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 18
+    Info (12023): Found entity 1: sm_display File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 4
+Info (12021): Found 1 design units, including 1 entities, in source file block.bdf
+    Info (12023): Found entity 1: block
+Info (12021): Found 2 design units, including 1 entities, in source file xiaodou.vhd
+    Info (12022): Found design unit 1: xiaodou-behav File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/xiaodou.vhd Line: 9
+    Info (12023): Found entity 1: xiaodou File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/xiaodou.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file judge.vhd
+    Info (12022): Found design unit 1: judge-behav File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/judge.vhd Line: 12
+    Info (12023): Found entity 1: judge File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/judge.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file leds7.vhd
+    Info (12022): Found design unit 1: leds7-bhv File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/leds7.vhd Line: 14
+    Info (12023): Found entity 1: leds7 File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/leds7.vhd Line: 4
+Info (12021): Found 2 design units, including 1 entities, in source file bjdjqd.vhd
+    Info (12022): Found design unit 1: bjdjqd-bhav File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/bjdjqd.vhd Line: 10
+    Info (12023): Found entity 1: bjdjqd File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/bjdjqd.vhd Line: 4
+Warning (10236): Verilog HDL Implicit Net warning at oled_drive.v(58): created implicit net for "write_done" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 58
+Info (12127): Elaborating entity "block" for the top level hierarchy
+Info (12128): Elaborating entity "sm_display" for hierarchy "sm_display:inst1"
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(58): signal "n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 58
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(65): signal "judge_finish" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 65
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(66): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 66
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(67): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 67
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(77): signal "judge_finish" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 77
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(78): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 78
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(79): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 79
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(89): signal "judge_finish" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 89
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(90): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 90
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(91): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 91
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(102): signal "judge_finish" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 102
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(103): signal "a" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 103
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(104): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 104
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(115): signal "judge_finish" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 115
+Warning (10492): VHDL Process Statement warning at sm_display.vhd(117): signal "result" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/sm_display.vhd Line: 117
+Info (12128): Elaborating entity "FREQUENCIES" for hierarchy "FREQUENCIES:inst"
+Info (12128): Elaborating entity "judge" for hierarchy "judge:inst3"
+Warning (10492): VHDL Process Statement warning at judge.vhd(17): signal "finish_flag" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/judge.vhd Line: 17
+Warning (10492): VHDL Process Statement warning at judge.vhd(18): signal "code" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/judge.vhd Line: 18
+Warning (10492): VHDL Process Statement warning at judge.vhd(29): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/judge.vhd Line: 29
+Info (12128): Elaborating entity "leds7" for hierarchy "leds7:inst5"
+Warning (10036): Verilog HDL or VHDL warning at leds7.vhd(17): object "RC" assigned a value but never read File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/leds7.vhd Line: 17
+Info (12128): Elaborating entity "caculator" for hierarchy "caculator:inst7"
+Warning (10492): VHDL Process Statement warning at caculator.vhd(26): signal "rst_n" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/caculator.vhd Line: 26
+Info (12128): Elaborating entity "oled_drive" for hierarchy "oled_drive:inst6"
+Info (12128): Elaborating entity "clk_fenpin" for hierarchy "oled_drive:inst6|clk_fenpin:clk_fenpin_inst" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 48
+Info (12128): Elaborating entity "spi_writebyte" for hierarchy "oled_drive:inst6|spi_writebyte:spi_writebyte_inst" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 59
+Info (10264): Verilog HDL Case Statement information at spi_writebyte.v(46): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/spi_writebyte.v Line: 46
+Info (12128): Elaborating entity "oled_init" for hierarchy "oled_drive:inst6|oled_init:oled_init_inst" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 71
+Info (10264): Verilog HDL Case Statement information at oled_init.v(174): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 174
+Warning (10230): Verilog HDL assignment warning at oled_init.v(246): truncated value with size 4 to match size of target (2) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 246
+Info (10264): Verilog HDL Case Statement information at oled_init.v(251): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 251
+Warning (10030): Net "init_cmd.data_a" at oled_init.v(24) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 24
+Warning (10030): Net "init_cmd.waddr_a" at oled_init.v(24) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 24
+Warning (10030): Net "oled_on_cmd.data_a" at oled_init.v(27) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 27
+Warning (10030): Net "oled_on_cmd.waddr_a" at oled_init.v(27) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 27
+Warning (10030): Net "clear_cmd.data_a" at oled_init.v(30) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 30
+Warning (10030): Net "clear_cmd.waddr_a" at oled_init.v(30) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 30
+Warning (10030): Net "init_cmd.we_a" at oled_init.v(24) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 24
+Warning (10030): Net "oled_on_cmd.we_a" at oled_init.v(27) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 27
+Warning (10030): Net "clear_cmd.we_a" at oled_init.v(30) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 30
+Info (12128): Elaborating entity "ram_read" for hierarchy "oled_drive:inst6|ram_read:ram_read_inst" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 85
+Warning (10230): Verilog HDL assignment warning at ram_read.v(35): truncated value with size 11 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 35
+Info (10264): Verilog HDL Case Statement information at ram_read.v(113): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 113
+Info (10264): Verilog HDL Case Statement information at ram_read.v(159): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 159
+Warning (10030): Net "write_cmd.data_a" at ram_read.v(29) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 29
+Warning (10030): Net "write_cmd.waddr_a" at ram_read.v(29) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 29
+Warning (10030): Net "write_cmd.we_a" at ram_read.v(29) has no driver or initial value, using a default initial value '0' File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 29
+Info (12128): Elaborating entity "ram_write" for hierarchy "oled_drive:inst6|ram_write:ram_write_inst" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 100
+Warning (10027): Verilog HDL or VHDL warning at the ram_write.v(289): index expression is not wide enough to address all of the elements in the array File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 289
+Warning (10230): Verilog HDL assignment warning at ram_write.v(320): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 320
+Warning (10230): Verilog HDL assignment warning at ram_write.v(338): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 338
+Warning (10230): Verilog HDL assignment warning at ram_write.v(349): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 349
+Warning (10230): Verilog HDL assignment warning at ram_write.v(350): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 350
+Warning (10230): Verilog HDL assignment warning at ram_write.v(351): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 351
+Warning (10230): Verilog HDL assignment warning at ram_write.v(356): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 356
+Warning (10230): Verilog HDL assignment warning at ram_write.v(367): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 367
+Warning (10230): Verilog HDL assignment warning at ram_write.v(378): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 378
+Warning (10230): Verilog HDL assignment warning at ram_write.v(379): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 379
+Warning (10230): Verilog HDL assignment warning at ram_write.v(380): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 380
+Warning (10230): Verilog HDL assignment warning at ram_write.v(385): truncated value with size 32 to match size of target (10) File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_write.v Line: 385
+Warning (12125): Using design file ram_show.v, which is not specified as a design file for the current project, but contains definitions for 1 design units and 1 entities in project
+    Info (12023): Found entity 1: ram_show File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_show.v Line: 39
+Info (12128): Elaborating entity "ram_show" for hierarchy "oled_drive:inst6|ram_show:ram_show_inst" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_drive.v Line: 112
+Info (12128): Elaborating entity "altsyncram" for hierarchy "oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_show.v Line: 94
+Info (12130): Elaborated megafunction instantiation "oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_show.v Line: 94
+Info (12133): Instantiated megafunction "oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component" with the following parameter: File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_show.v Line: 94
+    Info (12134): Parameter "address_aclr_b" = "CLEAR0"
+    Info (12134): Parameter "address_reg_b" = "CLOCK0"
+    Info (12134): Parameter "clock_enable_input_a" = "BYPASS"
+    Info (12134): Parameter "clock_enable_input_b" = "BYPASS"
+    Info (12134): Parameter "clock_enable_output_b" = "BYPASS"
+    Info (12134): Parameter "intended_device_family" = "Cyclone IV E"
+    Info (12134): Parameter "lpm_type" = "altsyncram"
+    Info (12134): Parameter "numwords_a" = "1024"
+    Info (12134): Parameter "numwords_b" = "1024"
+    Info (12134): Parameter "operation_mode" = "DUAL_PORT"
+    Info (12134): Parameter "outdata_aclr_b" = "CLEAR0"
+    Info (12134): Parameter "outdata_reg_b" = "CLOCK0"
+    Info (12134): Parameter "power_up_uninitialized" = "FALSE"
+    Info (12134): Parameter "rdcontrol_reg_b" = "CLOCK0"
+    Info (12134): Parameter "read_during_write_mode_mixed_ports" = "DONT_CARE"
+    Info (12134): Parameter "widthad_a" = "10"
+    Info (12134): Parameter "widthad_b" = "10"
+    Info (12134): Parameter "width_a" = "8"
+    Info (12134): Parameter "width_b" = "8"
+    Info (12134): Parameter "width_byteena_a" = "1"
+Info (12021): Found 1 design units, including 1 entities, in source file db/altsyncram_0ar1.tdf
+    Info (12023): Found entity 1: altsyncram_0ar1 File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/altsyncram_0ar1.tdf Line: 27
+Info (12128): Elaborating entity "altsyncram_0ar1" for hierarchy "oled_drive:inst6|ram_show:ram_show_inst|altsyncram:altsyncram_component|altsyncram_0ar1:auto_generated" File: d:/download/quartus17.1/quartus/libraries/megafunctions/altsyncram.tdf Line: 791
+Info (12128): Elaborating entity "top" for hierarchy "top:inst8"
+Info (12128): Elaborating entity "seg_bcd" for hierarchy "top:inst8|seg_bcd:seg_bcd_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v Line: 83
+Info (12128): Elaborating entity "seg_decoder" for hierarchy "top:inst8|seg_bcd:seg_bcd_m0|seg_decoder:seg_decoder_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_bcd.v Line: 14
+Info (12128): Elaborating entity "seg_scan" for hierarchy "top:inst8|seg_bcd:seg_bcd_m0|seg_scan:seg_scan_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/seg_bcd.v Line: 64
+Info (12128): Elaborating entity "ds1302_test" for hierarchy "top:inst8|ds1302_test:ds1302_test_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v Line: 97
+Info (12128): Elaborating entity "ds1302" for hierarchy "top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302_test.v Line: 67
+Info (10264): Verilog HDL Case Statement information at ds1302.v(64): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v Line: 64
+Info (10264): Verilog HDL Case Statement information at ds1302.v(83): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v Line: 83
+Info (10264): Verilog HDL Case Statement information at ds1302.v(149): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v Line: 149
+Info (10264): Verilog HDL Case Statement information at ds1302.v(176): all case item expressions in this case statement are onehot File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v Line: 176
+Info (12128): Elaborating entity "ds1302_io" for hierarchy "top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302.v Line: 337
+Info (12128): Elaborating entity "spi_master" for hierarchy "top:inst8|ds1302_test:ds1302_test_m0|ds1302:ds1302_m0|ds1302_io:ds1302_io_m0|spi_master:spi_master_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ds1302_io.v Line: 169
+Info (12128): Elaborating entity "ax_debounce" for hierarchy "top:inst8|ax_debounce:ax_debounce_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v Line: 107
+Info (12128): Elaborating entity "ax_pwm" for hierarchy "top:inst8|ax_pwm:ax_pwm_m0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v Line: 119
+Info (12128): Elaborating entity "bjdjqd" for hierarchy "bjdjqd:inst9"
+Warning (10492): VHDL Process Statement warning at bjdjqd.vhd(77): signal "rst" is read inside the Process Statement but isn't in the Process Statement's sensitivity list File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/bjdjqd.vhd Line: 77
+Info (276014): Found 4 instances of uninferred RAM logic
+    Info (276004): RAM logic "oled_drive:inst6|oled_init:oled_init_inst|init_cmd" is uninferred due to inappropriate RAM size File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 24
+    Info (276004): RAM logic "oled_drive:inst6|oled_init:oled_init_inst|oled_on_cmd" is uninferred due to inappropriate RAM size File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 27
+    Info (276004): RAM logic "oled_drive:inst6|oled_init:oled_init_inst|clear_cmd" is uninferred due to inappropriate RAM size File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 30
+    Info (276004): RAM logic "oled_drive:inst6|ram_read:ram_read_inst|write_cmd" is uninferred due to inappropriate RAM size File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 29
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (28) in the Memory Initialization File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram0_oled_init_845b43d4.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram0_oled_init_845b43d4.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Critical Warning (127005): Memory depth (4) in the design file differs from memory depth (3) in the Memory Initialization File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram1_oled_init_845b43d4.hdl.mif" -- setting initial value for remaining addresses to 0
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (25) in the Memory Initialization File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram2_oled_init_845b43d4.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram2_oled_init_845b43d4.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Critical Warning (127005): Memory depth (32) in the design file differs from memory depth (25) in the Memory Initialization File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram0_ram_read_18505fbe.hdl.mif" -- setting initial value for remaining addresses to 0
+Warning (127007): Memory Initialization File or Hexadecimal (Intel-Format) File "D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/mimasuo.ram0_ram_read_18505fbe.hdl.mif" contains "don't care" values -- overwriting them with 0s
+Info (278001): Inferred 2 megafunctions from design logic
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "oled_drive:inst6|oled_init:oled_init_inst|Mod0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 137
+    Info (278004): Inferred divider/modulo megafunction ("lpm_divide") from the following logic: "oled_drive:inst6|ram_read:ram_read_inst|Mod0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/ram_read.v Line: 76
+Info (12130): Elaborated megafunction instantiation "oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0" File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 137
+Info (12133): Instantiated megafunction "oled_drive:inst6|oled_init:oled_init_inst|lpm_divide:Mod0" with the following parameter: File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 137
+    Info (12134): Parameter "LPM_WIDTHN" = "5"
+    Info (12134): Parameter "LPM_WIDTHD" = "2"
+    Info (12134): Parameter "LPM_NREPRESENTATION" = "UNSIGNED"
+    Info (12134): Parameter "LPM_DREPRESENTATION" = "UNSIGNED"
+Info (12021): Found 1 design units, including 1 entities, in source file db/lpm_divide_h9m.tdf
+    Info (12023): Found entity 1: lpm_divide_h9m File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/lpm_divide_h9m.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/sign_div_unsign_6kh.tdf
+    Info (12023): Found entity 1: sign_div_unsign_6kh File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/sign_div_unsign_6kh.tdf Line: 24
+Info (12021): Found 1 design units, including 1 entities, in source file db/alt_u_div_04f.tdf
+    Info (12023): Found entity 1: alt_u_div_04f File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/alt_u_div_04f.tdf Line: 26
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_7pc.tdf
+    Info (12023): Found entity 1: add_sub_7pc File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/add_sub_7pc.tdf Line: 22
+Info (12021): Found 1 design units, including 1 entities, in source file db/add_sub_8pc.tdf
+    Info (12023): Found entity 1: add_sub_8pc File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/db/add_sub_8pc.tdf Line: 22
+Info (13000): Registers with preset signals will power-up high File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/oled_init.v Line: 6
+Info (13003): DEV_CLRn pin will set, and not reset, register with preset signal due to NOT Gate Push-Back
+Warning (13024): Output pins are stuck at VCC or GND
+    Warning (13410): Pin "led[0]" is stuck at VCC
+    Warning (13410): Pin "seg_data[7]" is stuck at VCC
+Info (286030): Timing-Driven Synthesis is running
+Info (17049): 28 registers lost all their fanouts during netlist optimizations.
+Warning (20013): Ignored 3 assignments for entity "mimasuo" -- entity does not exist in design
+    Warning (20014): Assignment for entity set_global_assignment -name LL_ROOT_REGION ON -entity mimasuo -section_id "Root Region" was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name LL_MEMBER_STATE LOCKED -entity mimasuo -section_id "Root Region" was ignored
+    Warning (20014): Assignment for entity set_global_assignment -name LL_ROUTING_REGION OFF -entity mimasuo -section_id "Root Region" was ignored
+Info (144001): Generated suppressed messages file D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/mimasuo.map.smsg
+Info (16010): Generating hard_block partition "hard_block:auto_generated_inst"
+    Info (16011): Adding 0 node(s), including 0 DDIO, 0 PLL, 0 transceiver and 0 LCELL
+Info (21057): Implemented 3723 device resources after synthesis - the final resource count might be different
+    Info (21058): Implemented 11 input pins
+    Info (21059): Implemented 46 output pins
+    Info (21060): Implemented 1 bidirectional pins
+    Info (21061): Implemented 3657 logic cells
+    Info (21064): Implemented 8 RAM segments
+Info: Quartus Prime Analysis & Synthesis was successful. 0 errors, 65 warnings
+    Info: Peak virtual memory: 4845 megabytes
+    Info: Processing ended: Tue Mar 07 12:11:32 2023
+    Info: Elapsed time: 00:00:44
+    Info: Total CPU time (on all processors): 00:01:00
+
+
++------------------------------------------+
+; Analysis & Synthesis Suppressed Messages ;
++------------------------------------------+
+The suppressed messages can be found in D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/mimasuo.map.smsg.
+
+

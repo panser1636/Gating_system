@@ -1,0 +1,16 @@
+Fitter Status : Successful - Tue Mar 07 12:12:02 2023
+Quartus Prime Version : 17.1.0 Build 590 10/25/2017 SJ Lite Edition
+Revision Name : mimasuo
+Top-level Entity Name : block
+Family : Cyclone IV E
+Device : EP4CE10F17C8L
+Timing Models : Final
+Total logic elements : 3,606 / 10,320 ( 35 % )
+    Total combinational functions : 3,568 / 10,320 ( 35 % )
+    Dedicated logic registers : 749 / 10,320 ( 7 % )
+Total registers : 749
+Total pins : 58 / 180 ( 32 % )
+Total virtual pins : 0
+Total memory bits : 8,192 / 423,936 ( 2 % )
+Embedded Multiplier 9-bit elements : 0 / 46 ( 0 % )
+Total PLLs : 0 / 2 ( 0 % )

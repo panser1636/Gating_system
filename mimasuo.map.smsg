@@ -1,0 +1,3 @@
+Info (10281): Verilog HDL Declaration information at top.v(16): object "buzzer" differs only in case from object "BUZZER" in the same scope File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/top.v Line: 16
+Info (10281): Verilog HDL Declaration information at buzzer_pwn_test.v(6): object "buzzer" differs only in case from object "BUZZER" in the same scope File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/buzzer_pwn_test.v Line: 6
+Warning (10268): Verilog HDL information at spi_writebyte.v(17): always construct contains both blocking and non-blocking assignments File: D:/Download/quartus17.1/vhdl_keshe/vhdl2_fuben2/spi_writebyte.v Line: 17

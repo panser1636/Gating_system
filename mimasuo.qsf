@@ -1,0 +1,132 @@
+# -------------------------------------------------------------------------- #
+#
+# Copyright (C) 1991-2010 Altera Corporation
+# Your use of Altera Corporation's design tools, logic functions 
+# and other software and tools, and its AMPP partner logic 
+# functions, and any output files from any of the foregoing 
+# (including device programming or simulation files), and any 
+# associated documentation or information are expressly subject 
+# to the terms and conditions of the Altera Program License 
+# Subscription Agreement, Altera MegaCore Function License 
+# Agreement, or other applicable license agreement, including, 
+# without limitation, that your use is for the sole purpose of 
+# programming logic devices manufactured by Altera and sold by 
+# Altera or its authorized distributors.  Please refer to the 
+# applicable agreement for further details.
+#
+# -------------------------------------------------------------------------- #
+#
+# Quartus II 64-Bit
+# Version 9.1 Build 350 03/24/2010 Service Pack 2 SJ Full Version
+# Date created = 15:49:00  January 29, 2023
+#
+# -------------------------------------------------------------------------- #
+#
+# Notes:
+#
+# 1) The default values for assignments are stored in the file:
+#		mimasuo_assignment_defaults.qdf
+#    If this file doesn't exist, see file:
+#		assignment_defaults.qdf
+#
+# 2) Altera recommends that you do not modify this file. This
+#    file is updated automatically by the Quartus II software
+#    and any changes you make may be lost or overwritten.
+#
+# -------------------------------------------------------------------------- #
+
+
+set_global_assignment -name FAMILY "Cyclone IV E"
+set_global_assignment -name DEVICE EP4CE10F17C8L
+set_global_assignment -name TOP_LEVEL_ENTITY block
+set_global_assignment -name ORIGINAL_QUARTUS_VERSION "9.1 SP2"
+set_global_assignment -name PROJECT_CREATION_TIME_DATE "15:49:00  JANUARY 29, 2023"
+set_global_assignment -name LAST_QUARTUS_VERSION "17.1.0 Lite Edition"
+set_global_assignment -name USE_GENERATED_PHYSICAL_CONSTRAINTS OFF -section_id eda_blast_fpga
+set_global_assignment -name MIN_CORE_JUNCTION_TEMP 0
+set_global_assignment -name MAX_CORE_JUNCTION_TEMP 85
+set_global_assignment -name NOMINAL_CORE_SUPPLY_VOLTAGE 1.0V
+set_global_assignment -name LL_ROOT_REGION ON -entity mimasuo -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -entity mimasuo -section_id "Root Region"
+set_global_assignment -name STRATIX_DEVICE_IO_STANDARD "2.5 V"
+set_location_assignment PIN_E1 -to CLK
+set_global_assignment -name SIMULATION_MODE FUNCTIONAL
+set_global_assignment -name INCREMENTAL_VECTOR_INPUT_SOURCE wave.vwf
+set_location_assignment PIN_T14 -to KC[3]
+set_location_assignment PIN_T13 -to KC[2]
+set_location_assignment PIN_T12 -to KC[1]
+set_location_assignment PIN_T11 -to KC[0]
+set_location_assignment PIN_T10 -to KR[3]
+set_location_assignment PIN_T9 -to KR[2]
+set_location_assignment PIN_T8 -to KR[1]
+set_location_assignment PIN_T7 -to KR[0]
+set_location_assignment PIN_N13 -to RST
+set_location_assignment PIN_B1 -to in1_4[0]
+set_location_assignment PIN_B3 -to in1_4[1]
+set_location_assignment PIN_B4 -to in1_4[2]
+set_location_assignment PIN_B5 -to in1_4[3]
+set_global_assignment -name TIMEQUEST_MULTICORNER_ANALYSIS ON
+set_global_assignment -name TIMEQUEST_DO_CCPP_REMOVAL ON
+set_location_assignment PIN_C2 -to hongn
+set_location_assignment PIN_E8 -to hongw
+set_location_assignment PIN_C9 -to led3
+set_location_assignment PIN_D9 -to led4
+set_location_assignment PIN_E10 -to ledn
+set_location_assignment PIN_F9 -to ledw
+set_location_assignment PIN_R12 -to oled_dc
+set_location_assignment PIN_R10 -to oled_mosi
+set_location_assignment PIN_R13 -to oled_rst
+set_location_assignment PIN_R11 -to oled_sclk
+set_location_assignment PIN_E16 -to ram_rst
+set_global_assignment -name POWER_PRESET_COOLING_SOLUTION "23 MM HEAT SINK WITH 200 LFPM AIRFLOW"
+set_global_assignment -name POWER_BOARD_THERMAL_MODEL "NONE (CONSERVATIVE)"
+set_location_assignment PIN_M15 -to key1
+set_location_assignment PIN_N8 -to rtc_ce
+set_location_assignment PIN_M8 -to rtc_data
+set_location_assignment PIN_P6 -to rtc_sclk
+set_location_assignment PIN_N9 -to seg_sel[0]
+set_location_assignment PIN_P9 -to seg_sel[1]
+set_location_assignment PIN_M10 -to seg_sel[2]
+set_location_assignment PIN_N11 -to seg_sel[3]
+set_location_assignment PIN_P11 -to seg_sel[4]
+set_location_assignment PIN_M11 -to seg_sel[5]
+set_location_assignment PIN_C11 -to buzzer
+set_location_assignment PIN_R16 -to seg_data[7]
+set_location_assignment PIN_N15 -to seg_data[6]
+set_location_assignment PIN_N12 -to seg_data[5]
+set_location_assignment PIN_P15 -to seg_data[4]
+set_location_assignment PIN_T15 -to seg_data[3]
+set_location_assignment PIN_P16 -to seg_data[2]
+set_location_assignment PIN_N16 -to seg_data[1]
+set_location_assignment PIN_R14 -to seg_data[0]
+set_global_assignment -name PARTITION_NETLIST_TYPE SOURCE -section_id Top
+set_global_assignment -name PARTITION_COLOR 16764057 -section_id Top
+set_global_assignment -name LL_ROOT_REGION ON -section_id "Root Region"
+set_global_assignment -name LL_MEMBER_STATE LOCKED -section_id "Root Region"
+set_global_assignment -name PARTITION_FITTER_PRESERVATION_LEVEL PLACEMENT_AND_ROUTING -section_id Top
+set_global_assignment -name VERILOG_FILE top.v
+set_global_assignment -name VERILOG_FILE spi_master.v
+set_global_assignment -name VERILOG_FILE seg_scan.v
+set_global_assignment -name VERILOG_FILE seg_decoder.v
+set_global_assignment -name VERILOG_FILE seg_bcd.v
+set_global_assignment -name VERILOG_FILE ds1302_test.v
+set_global_assignment -name VERILOG_FILE ds1302_io.v
+set_global_assignment -name VERILOG_FILE ds1302.v
+set_global_assignment -name VERILOG_FILE buzzer_pwn_test.v
+set_global_assignment -name VERILOG_FILE ax_pwm.v
+set_global_assignment -name VERILOG_FILE ax_debounce.v
+set_global_assignment -name VERILOG_FILE clk_fenpin.v
+set_global_assignment -name VERILOG_FILE oled_drive.v
+set_global_assignment -name VERILOG_FILE ram_write.v
+set_global_assignment -name VERILOG_FILE spi_writebyte.v
+set_global_assignment -name VERILOG_FILE oled_init.v
+set_global_assignment -name VERILOG_FILE ram_read.v
+set_global_assignment -name VHDL_FILE caculator.vhd
+set_global_assignment -name VHDL_FILE FREQUENCIES.vhd
+set_global_assignment -name VHDL_FILE sm_display.vhd
+set_global_assignment -name BDF_FILE block.bdf
+set_global_assignment -name VHDL_FILE xiaodou.vhd
+set_global_assignment -name VHDL_FILE judge.vhd
+set_global_assignment -name VHDL_FILE leds7.vhd
+set_global_assignment -name VHDL_FILE bjdjqd.vhd
+set_instance_assignment -name PARTITION_HIERARCHY root_partition -to | -section_id Top

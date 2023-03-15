@@ -1,0 +1,149 @@
+------------------------------------------------------------
+TimeQuest Timing Analyzer Summary
+------------------------------------------------------------
+
+Type  : Slow 1000mV 85C Model Setup 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : -7.740
+TNS   : -670.374
+
+Type  : Slow 1000mV 85C Model Setup 'CLK'
+Slack : -5.240
+TNS   : -1079.919
+
+Type  : Slow 1000mV 85C Model Setup 'FREQUENCIES:inst|clk_1k'
+Slack : -3.777
+TNS   : -128.474
+
+Type  : Slow 1000mV 85C Model Setup 'FREQUENCIES:inst|clk_100hz'
+Slack : -3.102
+TNS   : -84.325
+
+Type  : Slow 1000mV 85C Model Hold 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : 0.311
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Hold 'FREQUENCIES:inst|clk_1k'
+Slack : 0.338
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Hold 'FREQUENCIES:inst|clk_100hz'
+Slack : 0.511
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Hold 'CLK'
+Slack : 0.512
+TNS   : 0.000
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : -4.000
+TNS   : -438.097
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -759.327
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'FREQUENCIES:inst|clk_1k'
+Slack : -1.763
+TNS   : -118.121
+
+Type  : Slow 1000mV 85C Model Minimum Pulse Width 'FREQUENCIES:inst|clk_100hz'
+Slack : -1.763
+TNS   : -59.942
+
+Type  : Slow 1000mV 0C Model Setup 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : -7.372
+TNS   : -637.185
+
+Type  : Slow 1000mV 0C Model Setup 'CLK'
+Slack : -5.057
+TNS   : -1033.798
+
+Type  : Slow 1000mV 0C Model Setup 'FREQUENCIES:inst|clk_1k'
+Slack : -3.610
+TNS   : -122.090
+
+Type  : Slow 1000mV 0C Model Setup 'FREQUENCIES:inst|clk_100hz'
+Slack : -2.972
+TNS   : -80.177
+
+Type  : Slow 1000mV 0C Model Hold 'FREQUENCIES:inst|clk_1k'
+Slack : 0.346
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Hold 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : 0.432
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Hold 'FREQUENCIES:inst|clk_100hz'
+Slack : 0.495
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Hold 'CLK'
+Slack : 0.497
+TNS   : 0.000
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : -4.000
+TNS   : -438.097
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -759.327
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'FREQUENCIES:inst|clk_1k'
+Slack : -1.763
+TNS   : -118.121
+
+Type  : Slow 1000mV 0C Model Minimum Pulse Width 'FREQUENCIES:inst|clk_100hz'
+Slack : -1.763
+TNS   : -59.942
+
+Type  : Fast 1000mV 0C Model Setup 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : -4.106
+TNS   : -279.414
+
+Type  : Fast 1000mV 0C Model Setup 'CLK'
+Slack : -2.438
+TNS   : -426.295
+
+Type  : Fast 1000mV 0C Model Setup 'FREQUENCIES:inst|clk_1k'
+Slack : -1.685
+TNS   : -46.650
+
+Type  : Fast 1000mV 0C Model Setup 'FREQUENCIES:inst|clk_100hz'
+Slack : -1.320
+TNS   : -34.275
+
+Type  : Fast 1000mV 0C Model Hold 'FREQUENCIES:inst|clk_1k'
+Slack : 0.181
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Hold 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : 0.239
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Hold 'FREQUENCIES:inst|clk_100hz'
+Slack : 0.274
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Hold 'CLK'
+Slack : 0.276
+TNS   : 0.000
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'oled_drive:inst6|clk_fenpin:clk_fenpin_inst|clk_1m'
+Slack : -4.000
+TNS   : -438.097
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'CLK'
+Slack : -3.000
+TNS   : -759.327
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'FREQUENCIES:inst|clk_1k'
+Slack : -1.763
+TNS   : -118.121
+
+Type  : Fast 1000mV 0C Model Minimum Pulse Width 'FREQUENCIES:inst|clk_100hz'
+Slack : -1.763
+TNS   : -59.942
+
+------------------------------------------------------------
