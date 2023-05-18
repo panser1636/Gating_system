@@ -1,5 +1,5 @@
 # Gating_system
-VHDL课程设计，多功能门控系统实现
+FPGA 多功能门控系统实现
 
 ## 开发板和外设
 开发板：ALTERA 公司的 Cyclone IV 系列 FPGA，型号为 EP4CE10F17C8
